@@ -1,19 +1,4 @@
 ==========================================================
-Fire night bug:
-  1. Should conitnue glow after building destroyed.
-
-Pause button.
-
-Logic:
-  1. Points system - new calculation needed. Plus the stealth is incorrect data (show me 2 used).
-
-Gameplay:
-  0. הסטייה של אימוג'י גדול מהמרכז שלהם בפועל.
-  1. If no bombs and no refill -> Mission failed.
-  2. If no bombs but refill -> "Go to base" + radar show row to the base.
-  3. When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
-    Maybe some effect as well - but not "casual" style of conffeti.
-
 UX feeling:
   1. Glow white effect when starting level - works for the first time - but then esc -> and play -> no glow.
   2. Gold effect also in the final Mission Complete (Gold)
@@ -22,6 +7,18 @@ UI UX feeling:
   1. Hover on button - sound.
   2. Clicking on button - sound.
   3. Chossing from the levels - sound.
+  4. When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
+    Maybe some effect as well - but not "casual" style of conffeti.
+
+Logic:
+  1. Points system - new calculation needed. Plus the stealth is incorrect data (show me 2 used).
+
+Gameplay:
+  0. הסטייה של אימוג'י גדול מהמרכז שלהם בפועל.
+  1. If no bombs and no refill -> Mission failed.
+  2. If no bombs but refill -> "Go to base" + radar show row to the base.
+
+
 
 
 1. Atom bomb?

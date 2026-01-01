@@ -2371,19 +2371,12 @@ function drawNight() {
     ctx.beginPath();
     ctx.arc(b.x, b.y, r, 0, Math.PI * 2);
     ctx.fill();
-  }
-  ctx.globalCompositeOperation = "source-over";
-
-  // 🔥 Fire glow — REAL light (cuts darkness softly)
-  for (const t of entities.targets) {
-    if (!t.fire || !t.marker) continue;
-
-    const p = map.latLngToContainerPoint(
-      t.marker.getLatLng()
-    );
-
-    const r = 300;
-
+  }  
+  // 🔥 Fire glow (persistent, world-locked)
+  for (let i = activeFires.length - 1; i >= 0; i--) {
+    const f = activeFires[i];
+    const p = map.latLngToContainerPoint([f.lat, f.lng]);
+    const r = 280;
     const grad = ctx.createRadialGradient(
       p.x, p.y, 0,
       p.x, p.y, r
@@ -2391,7 +2384,7 @@ function drawNight() {
 
     grad.addColorStop(0.0, "rgba(0,0,0,0.65)");
     grad.addColorStop(0.4, "rgba(0,0,0,0.35)");
-    grad.addColorStop(0.75,"rgba(0,0,0,0.15)");
+    grad.addColorStop(0.75, "rgba(0,0,0,0.15)");
     grad.addColorStop(1.0, "rgba(0,0,0,0)");
 
     ctx.globalCompositeOperation = "destination-out";
@@ -2400,11 +2393,7 @@ function drawNight() {
     ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
     ctx.fill();
   }
-
-ctx.globalCompositeOperation = "source-over";
-
-
-
+  ctx.globalCompositeOperation = "source-over";
 }
 
 /* ========= GAME LOOP (logic preserved) ========= */
