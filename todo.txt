@@ -1,24 +1,54 @@
 ==========================================================
-UX feeling:
+Refactoring:
+  Split to files.
+  Remove Hebrew.
+  Split levels to files.
+
+  Final:
+    flight_ops/
+    ├── index.html
+    ├── js/
+    │   ├── main.js
+    │   ├── state.js
+    │   ├── geo.js
+    │   ├── entities.js
+    │   ├── effects.js
+    │   ├── radar.js
+    │   ├── ui.js
+    │   ├── input.js
+    │   ├── sound.js
+    │   └── levels/
+            └ basic:
+              ├ operation_bla.js  # <- will be level 1
+              ├ operation_gu.js
+              └ ....js
+    │
+    └── assets/
+        └── sounds.js   (כמו שיש לך)
+
+
+UI/UX feeling:
   1. Glow white effect when starting level - works for the first time - but then esc -> and play -> no glow.
   2. Gold effect also in the final Mission Complete (Gold)
-
-UI UX feeling:
-  1. Hover on button - sound.
-  2. Clicking on button - sound.
-  3. Chossing from the levels - sound.
-  4. When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
+  3. Hover on button - sound.
+  4. Clicking on button - sound.
+  5. Chossing from the levels - sound.
+  6. When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
     Maybe some effect as well - but not "casual" style of conffeti.
 
 Logic:
   1. Points system - new calculation needed. Plus the stealth is incorrect data (show me 2 used).
 
 Gameplay:
-  0. הסטייה של אימוג'י גדול מהמרכז שלהם בפועל.
+  0. הסטייה של אימוג'י גדול מהמרכז שלהם בפועל. <- IMPORTANT!!!
   1. If no bombs and no refill -> Mission failed.
   2. If no bombs but refill -> "Go to base" + radar show row to the base.
 
+No one file:
+  When playing the game - it will load the content from GitHub!
+  Something like: <script src="github // ..sounds.js"></script>
 
+Maybe description for levels?
 
 ==========================================================
 1. Atom bomb?

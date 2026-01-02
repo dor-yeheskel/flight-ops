@@ -13,8 +13,14 @@
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <!-- TODO: REMOVE this and copy the content to this file! -->
 <script src="sounds.js"></script>
-<script src="levels.js"></script>
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+<script>
+  window.LEVELS = {};
+</script>
+<script src="js/levels/operation_x.js"></script>
+<script src="js/levels/operation_y.js"></script>
+<script src="js/levels/operation_z.js"></script>
+
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -733,7 +739,6 @@ let currentState = GAME_STATE.MENU;
 /* ========= LEVELS (single-file, Python-ish structure) ========= */
 
 const levelToData = window.LEVELS;
-
 const levelOrder = Object.keys(levelToData);
 
 /* ======== Levels Memory ======== */
