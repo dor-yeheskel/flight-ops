@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Title -->
+<title>Flight Ops</title>
+<link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'>
+  <text x='50%' y='60%' dominant-baseline='middle' text-anchor='middle' font-size='90'>✈️</text>
+</svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/game.css">
+
+<!-- Map -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+<body>
+<div id="map"></div>
+
+<canvas id="nightCanvas"></canvas>
+
+<div id="hud">
+  <div id="levelTitle"></div>
+  <div class="hud-box">
+    <div class="hud-item">💣 <span id="hud-bombs">100</span></div>
+    <div class="hud-item">🕶 <span id="hud-stealth">2</span></div>
+    <div class="hud-item">🎯 <span id="hud-targets">2</span></div>
+  </div>
+</div>
+<button id="muteBtn" class="mute-btn">🔊</button>
+
+<div id="radar">
+  <canvas id="radarCanvas" width="160" height="160"></canvas>
+</div>
+
+<div id="intro">
+  <div class="panel">
+
+    <h2 class="mission-title">✈️ Mission Briefing</h2>
+    <div class="mission-subtitle">Operation: Air Strike</div>
+
+    <div class="controls">
+      <div><span>⬆️ ⬇️</span><span>Speed</span></div>
+      <div><span>⬅️ ➡️</span><span>Turn</span></div>
+      <div><span>SPACE</span><span>Drop bomb 💣</span></div>
+      <div><span>Shift Left</span><span>Stealth 🕶️</span></div>
+    </div>
+
+    <div style="
+      margin-top:10px;
+      font-size:14px;
+      line-height:1.6;
+      opacity:0.9;
+    ">
+
+    <br>
+    <hr style="opacity:.15; margin:12px 0;">
+      🎯 Destroy all enemy targets<br>
+      ⚠️ Avoid radar missiles
+    </div>
+
+    <div style="margin-top:14px;">
+      <div style="opacity:0.8; font-size:13px; margin-bottom:4px;">Choose a level</div>
+      <select id="levelSelect"></select>
+    </div>
+
+    <div class="buttonRow" style="margin-top:14px;">
+      <button class="btn btnPrimary" id="startBtn">▶ START MISSION</button>
+    </div>
+
+    <div style="opacity:.5; font-size:12px; margin-top:8px;">
+      🎮 Use arrows to select · Enter to start
+    </div>
+    <div id="progressTable" class="progressWrap"></div>
+
+  </div>
+</div>
+
+<div id="endScreen"  style="
+  position:fixed;
+  inset:0;
+  background:rgba(10,15,20,0.95);
+  color:white;
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  font-family:system-ui;
+  text-align:center;
+  z-index:99999;
+">
+  <h1 id="endTitle" style="margin-bottom:10px;"></h1>
+
+  <div id="endSubtitle" style="opacity:0.85; margin-bottom:18px;"></div>
+
+  <button id="primaryActionBtn" style="
+    padding:14px 32px;
+    font-size:16px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#00ff88;
+    color:#000;
+  " class="endBtn">
+    Retry
+  </button>
+  <div style="margin-top:12px; font-size:13px; opacity:0.6;">
+    Press Enter / Space to continue
+  </div>
+
+  <div style="margin-top:12px; font-size:13px; opacity:0.6;">
+    esc for menu
+  </div>
+</div>
+
+<div id="pauseOverlay">
+  ⏸ PAUSED
+</div>
+
+<!-- Scripts -->
+<script src="js/constants.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/geo.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/map.js"></script>
+<script src="js/state.js"></script>
+<script src="js/level.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/weapons.js"></script>
+<script src="js/scoring.js"></script>
+<script src="js/gameover.js"></script>
+<script src="js/input.js"></script>
+<script src="js/radar.js"></script>
+<script src="js/gameloop.js"></script>
+<script src="js/navigation.js"></script>
+
+</body>
+</html>

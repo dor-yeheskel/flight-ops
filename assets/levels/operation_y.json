@@ -1,0 +1,28 @@
+{
+    "displayName": "Level 2: Inland Fields",
+    "start": {
+      "lat": 31.5085,
+      "lng": 34.4538,
+      "heading": 0
+    },
+    "targetCount": 3,
+    "targetLocations": [
+      { "lat": 31.5085, "lng": 34.4538 }
+    ],
+    "radarLocations": [
+      {
+        "lat": 31.6200,
+        "lng": 34.6400,
+        "size": "big",
+
+        "rocketSpeed": 30000,
+        "rocketFreq": 0.5,
+        "smartRocketsEvery": 5,
+        "smartRocketSpeedFactor": 0.6
+      }
+    ],
+    "limits": {
+      "maxBombs": 3,
+      "maxStealth": 2
+    }
+}

@@ -1,0 +1,60 @@
+/* ========= FX ========= */
+
+function fireEffect(target) {
+  if (!target) return;
+
+  const pos = target.marker
+    ? target.marker.getLatLng()
+    : { lat: target.lat, lng: target.lng };
+
+  const scale =
+    FIRE_SCALE_BY_SIZE[target.size || "medium"] || 1.2;
+
+  if (target.fire) {
+    const el = target.fire.getElement();
+    if (el) {
+      el.style.fontSize = `${28 * scale}px`;
+    }
+    return;
+  }
+  if (target.fire) return;
+
+  const fireMarker = L.marker(pos, {
+    icon: L.divIcon({
+      html: `<div class="fire-emoji" style="
+        font-size:${28 * scale}px;
+      ">🔥</div>`,
+      className: "",
+      iconSize: [32 * scale, 32 * scale],
+      iconAnchor: [16 * scale, 16 * scale]
+    })
+  }).addTo(layerFx);
+
+  target.fire = fireMarker;
+
+  activeFires.push({
+    lat: pos.lat,
+    lng: pos.lng,
+    created: performance.now(),
+    ttl: 4000
+  });
+
+}
+
+function explosionEffect(lat, lng) {
+  const boom = L.marker([lat, lng], {
+    icon: L.divIcon({ html: "💥", className: "explosion" })
+  }).addTo(layerFx);
+
+
+  if (levelToData[state.levelId]?.night) {
+    const p = map.latLngToContainerPoint([lat, lng]);
+    nightBursts.push({
+      x: p.x,
+      y: p.y,
+      t: performance.now()
+    });
+  }
+
+  setTimeout(() => layerFx.removeLayer(boom), 800);
+}
