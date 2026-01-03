@@ -1,20 +1,14 @@
-Glow white effect when starting level - works for the first time - but then esc -> and play -> no glow.
-
-When passing a level - then clicking on esc - it is not recorded the passing.
+Logic:
+  1. Points system - new calculation needed. Plus the stealth is incorrect data (show me 2 used).
 
 
 Problem - the night fire keep firing if I redu the stage.
 
 UI/UX feeling:
-  2. Gold effect also in the final Mission Complete (Gold)
-  3. Hover on button - sound.
-  4. Clicking on button - sound.
-  5. Chossing from the levels - sound.
+  2. Gold effect also in the final Mission Complete (Gold) - and make sure it's on the table.
   6. When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
     Maybe some effect as well - but not "casual" style of conffeti.
 
-Logic:
-  1. Points system - new calculation needed. Plus the stealth is incorrect data (show me 2 used).
 
 Gameplay:
   0. הסטייה של אימוג'י גדול מהמרכז שלהם בפועל. <- IMPORTANT!!!
@@ -34,6 +28,8 @@ Production:
 ==========================================================
 1. Atom bomb?
 2. Moving target?
+
+F11?
 
 Levels:
 שלב 1: אין רדארים (ללמוד שליטה)

@@ -5,9 +5,13 @@ function startGame() {
   introEl.style.display = "none";
   endScreenEl.style.display = "none";
 
-  state.gameStarted = true;
-  state.gameOver = false;
-  currentState = GAME_STATE.PLAYING;
+  whiteFlash();
+  
+  setTimeout(() => {
+    state.gameStarted = true;
+    state.gameOver = false;
+    currentState = GAME_STATE.PLAYING;
+  }, 70);
 }
 
 function restartLevel() {

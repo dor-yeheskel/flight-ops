@@ -44,7 +44,11 @@ function renderProgressTable() {
       rows.forEach(r => r.classList.remove("selected"));
       row.classList.add("selected");
       state.levelId = levelOrder[i];
+
+      playSound("clicked");
+      startGame();
     });
+
   });
 
 }

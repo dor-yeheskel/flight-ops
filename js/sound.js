@@ -15,7 +15,6 @@ const sounds = {
   clicked: new Audio("assets/sounds/clicked.wav"),
 };
 
-sounds.clicked.volume = 0.4;
 
 function playSound(name) {
   if (!soundEnabled) return;

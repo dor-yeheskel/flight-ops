@@ -598,7 +598,7 @@ body.night .fire-emoji {
 
 
 .mission-objectives {
-  margin-top: 10px;
+  margin-top: 2px;
   font-size: 14px;
   line-height: 1.6;
   opacity: 0.9;
@@ -606,7 +606,7 @@ body.night .fire-emoji {
 
 .mission-objectives hr {
   opacity: 0.15;
-  margin: 14px 0 10px;
+  margin: 22px 0 12px;
 }
 
 .mission-objectives > div {
@@ -618,4 +618,18 @@ body.night .fire-emoji {
   font-size: 12px;
   opacity: 0.45;
   letter-spacing: 0.3px;
+}
+
+#flashOverlay {
+  position: fixed;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100001;
+  transition: opacity 160ms ease-out;
+}
+
+#flashOverlay.active {
+  opacity: 0.9;
 }
