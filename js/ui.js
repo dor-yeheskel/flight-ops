@@ -21,7 +21,8 @@ function renderProgressTable() {
       <div class="progressRow
         ${unlocked ? "" : "locked"}
         ${unlocked && !data ? "unplayed" : ""}
-      ">
+        "
+        data-level-id="${id}">
 
         <div>${lvl.displayName}</div>
         <div class="${data?.rank?.includes('Gold') ? 'rank-gold' : ''}">
@@ -35,20 +36,21 @@ function renderProgressTable() {
   }
 
   el.innerHTML = html;
-  const rows = el.querySelectorAll(".progressRow:not(.header)");
-
-  rows.forEach((row, i) => {
-    if (row.classList.contains("locked")) return;
-
+  el.querySelectorAll(".progressRow:not(.header):not(.locked)")
+  .forEach(row => {
     row.addEventListener("click", () => {
-      rows.forEach(r => r.classList.remove("selected"));
+      const levelId = row.dataset.levelId;
+
+      // UI
+      el.querySelectorAll(".progressRow.selected")
+        .forEach(r => r.classList.remove("selected"));
       row.classList.add("selected");
-      state.levelId = levelOrder[i];
+
+      state.levelId = levelId;
+      state.levelIndex = levelOrder.indexOf(levelId);
 
       playSound("clicked");
-      startGame();
     });
-
   });
 
 }
