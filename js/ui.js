@@ -24,7 +24,7 @@ function renderProgressTable() {
       ">
 
         <div>${lvl.displayName}</div>
-        <div>
+        <div class="${data?.rank?.includes('Gold') ? 'rank-gold' : ''}">
           ${!unlocked ? "🔒" : (data ? data.rank : "—")}
         </div>
         <div>

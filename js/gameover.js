@@ -213,7 +213,8 @@ function victoryHandler() {
   setTimeout(() => {
     rankEl.style.display = "block";
     rankEl.style.opacity = "1";
-    rankEl.textContent = getRank(score);
+    rankEl.textContent = rank; 
+    rankEl.classList.toggle("rank-gold", rank.includes('Gold'));
   }, 2600);
 
 
