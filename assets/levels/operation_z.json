@@ -8,8 +8,8 @@
     "night": true,
     "targetCount": 2,
     "targetLocations": [
-      { "lat": 37.60813, "lng": -122.38093, "emoji": "🏛️", "size": "large" },
-      { "lat": 37.60813, "lng": -122.31023, "emoji": "🏙️", "size": "large" }
+      { "lat": 37.60813, "lng": -122.38093, "emoji": "🏛️", "size": "big" },
+      { "lat": 37.60813, "lng": -122.31023, "emoji": "🏙️", "size": "big" }
     ],
     "radarLocations": [
       {

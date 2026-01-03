@@ -8,6 +8,8 @@ function startGame() {
   whiteFlash();
   
   setTimeout(() => {
+    state.bombsUsed = 0;
+    state.stealthUsed = 0;
     state.gameStarted = true;
     state.gameOver = false;
     currentState = GAME_STATE.PLAYING;

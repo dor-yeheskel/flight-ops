@@ -6,6 +6,9 @@ function gameOverHandler() {
   title.textContent = "MISSION FAILED";
   title.className = "end-fail";
 
+  if (entities.targets.length === 0) {
+    console.warn("Victory on level with no targets — skipping scoring");
+  }
 
   const destroyed =
     (levelToData[state.levelId].targetLocations?.length || 0)
@@ -50,8 +53,17 @@ function victoryHandler() {
   const nextLevel = levelOrder[nextIndex];
 
   // ===== SCORE =====
-  const breakdown = calculateScoreBreakdown();
-  const score = breakdown.total;
+  const result = calculateScoreBreakdown();
+  const score = result.score;
+  const breakdown = result.breakdown;
+  if (!breakdown) {
+    console.error("Victory reached but score breakdown is null", {
+      score,
+      result
+    });
+    return;
+  }
+
   const rank = getRank(score);
 
   // ===== SAVE PROGRESS =====
@@ -60,20 +72,10 @@ function victoryHandler() {
   const newScore = {
     score,
     rank,
-    destroyedTargets: levelToData[levelId].targetLocations?.length ?? 0,
-    destroyedRadars: state.destroyedRadars,
-
-    bombsUsed: state.maxBombs - state.bombs,
-    bombsRemaining: state.bombs,
-
-    stealthUsed: state.maxStealth - state.stealthUses,
-    stealthRemaining: state.stealthUses
+    targets: breakdown.targets,
+    bombsUsed: breakdown.bombsUsed,
+    stealthUsed: breakdown.stealthUsed
   };
-
-  const radar = state.destroyedRadars;
-  const bombs = state.bombs;
-  const stealth = state.stealthUses;
-  const total = breakdown.total;
 
 
   let isNewRecord = false;
@@ -121,15 +123,14 @@ function victoryHandler() {
 
   document.getElementById("endSubtitle").innerHTML = `
     <div id="scoreBreakdown">
-
       <div class="scoreRow">
-        <span>Radar destroyed</span>
-        <span id="radarCount">0</span>
+        <span>Targets</span>
+        <span id="targetsCount">0</span>
       </div>
 
       <div class="scoreRow">
-        <span>Bombs remaining</span>
-        <span id="bombsCount">0</span>
+        <span>Bombs used</span>
+        <span id="bombsUsedCount">0</span>
       </div>
 
       <div class="scoreRow" id="stealthRow">
@@ -145,6 +146,7 @@ function victoryHandler() {
       </div>
 
       <div id="rankDisplay"></div>
+
     </div>
 
 
@@ -158,39 +160,61 @@ function victoryHandler() {
     `;
   }
 
-  const radarEl = document.getElementById("radarCount");
-  const bombsEl = document.getElementById("bombsCount");
+  const targetsEl = document.getElementById("targetsCount");
+  const bombsEl = document.getElementById("bombsUsedCount");
+
   const stealthEl = document.getElementById("stealthCount");
   const finalEl = document.getElementById("finalScore");
   const rankEl = document.getElementById("rankDisplay");
 
   // reset
-  radarEl.textContent = "0";
   bombsEl.textContent = "0";
   stealthEl.textContent = "0";
   finalEl.textContent = "0";
 
   // hide stealth if 0
-  if (stealth === 0) {
+  if (breakdown.stealthUsed === 0) {
     document.getElementById("stealthRow").style.display = "none";
   }
 
-  setTimeout(() => animateNumber(radarEl, 0, radar), 200);
-  setTimeout(() => animateNumber(bombsEl, 0, bombs), 800);
-  if (stealth > 0) {
-    setTimeout(() => animateNumber(stealthEl, 0, stealth), 1200);
+  setTimeout(() => {
+    animateNumber(
+      targetsEl,
+      0,
+      breakdown.targets,
+      600
+    );
+  }, 200);
+
+  setTimeout(() => {
+    animateNumber(
+      bombsEl,
+      0,
+      breakdown.bombsUsed,
+      600
+    );
+  }, 800);
+
+  if (breakdown.stealthUsed > 0) {
+    setTimeout(() => {
+      animateNumber(
+        stealthEl,
+        0,
+        breakdown.stealthUsed,
+        600
+      );
+    }, 1200);
   }
 
   setTimeout(() => {
-    animateNumber(finalEl, 0, total, 900);
+    animateNumber(finalEl, 0, score, 900);
   }, 1700);
 
   setTimeout(() => {
     rankEl.style.display = "block";
     rankEl.style.opacity = "1";
-    rankEl.textContent = getRank(total);
+    rankEl.textContent = getRank(score);
   }, 2600);
-
 
 
   const btn = document.getElementById("primaryActionBtn");

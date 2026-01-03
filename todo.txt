@@ -1,7 +1,3 @@
-Logic:
-  1. Points system - new calculation needed. Plus the stealth is incorrect data (show me 2 used).
-
-
 Problem - the night fire keep firing if I redu the stage.
 
 UI/UX feeling:
@@ -9,21 +5,14 @@ UI/UX feeling:
   6. When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
     Maybe some effect as well - but not "casual" style of conffeti.
 
-
 Gameplay:
   0. הסטייה של אימוג'י גדול מהמרכז שלהם בפועל. <- IMPORTANT!!!
   1. If no bombs and no refill -> Mission failed.
   2. If no bombs but refill -> "Go to base" + radar show row to the base.
-
-No one file:
-  When playing the game - it will load the content from GitHub!
-  Something like: <script src="github // ..sounds.js"></script>
-
-Maybe description for levels?
+  3. Maybe description for levels?
 
 Production:
-  1. How to use it as a single file? maybe a way to get all the data into a single HTML file?
-    or load it from GitHub?
+  1. How to use it? just load it from github url?
 
 ==========================================================
 1. Atom bomb?
@@ -31,6 +20,8 @@ Production:
 
 F11?
 
+Mission with 1 bomb - and need to return to base every time.
+Mission with day and same in night (elactraz)
 Levels:
 שלב 1: אין רדארים (ללמוד שליטה)
 שלב 2: רדארים אבל אין טילים חכמים

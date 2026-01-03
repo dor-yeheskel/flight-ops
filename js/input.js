@@ -102,6 +102,7 @@ window.addEventListener("keydown", e => {
   if (!state.keys[code]) {
     if (code === "ShiftLeft" && state.stealthUses > 0 && !state.stealthActive) {
       state.stealthActive = true;
+      state.stealthUsed = (state.stealthUsed || 0) + 1;
       state.stealthUses--;
       state.stealthTimer = 5;
       playSound("stealth");

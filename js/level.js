@@ -107,29 +107,18 @@ function spawnBase() {
 function spawnTargetsForLevel(levelId) {
   const lvl = levelToData[levelId];
 
-  // explicit target locations
-  if (Array.isArray(lvl.targetLocations) && lvl.targetLocations.length > 0) {
-    for (const p of lvl.targetLocations) addTarget(p);
-    entities.remainingTargets = entities.targets.length;
+  if (!Array.isArray(lvl.targetLocations)) {
+    entities.remainingTargets = 0;
     return;
   }
 
-  // random target area fallback (preserves your current behavior)
-  const targetArea = lvl.targetArea || {
-    minLat: 31.20, maxLat: 31.55,
-    minLng: 34.20, maxLng: 34.55
-  };
-
-  const count = lvl.targetCount ?? 3;
-
-  for (let i = 0; i < count; i++) {
-    const lat = targetArea.minLat + Math.random() * (targetArea.maxLat - targetArea.minLat);
-    const lng = targetArea.minLng + Math.random() * (targetArea.maxLng - targetArea.minLng);
-    addTarget(lat, lng);
+  for (const p of lvl.targetLocations) {
+    addTarget(p);
   }
 
   entities.remainingTargets = entities.targets.length;
 }
+
 
 function addTarget(target) {
   const size = target.size || "small";
@@ -161,7 +150,7 @@ function spawnRadarsForLevel(levelId) {
   entities.radars.length = 0;
 
   // explicit radar locations
-  if (Array.isArray(lvl.radarLocations) && lvl.radarLocations.length > 0) {
+  if (Array.isArray(lvl.radarLocations)) {
     for (const r of lvl.radarLocations)
       addRadar({
         lat: r.lat,

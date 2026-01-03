@@ -46,9 +46,3 @@ const FIRE_SCALE_BY_SIZE = {
   medium: 2,
   big: 2.5
 };
-
-const SCORE_RULES = {
-  radar: 80,
-  bombRemaining: 15,
-  stealthPenalty: 30
-};

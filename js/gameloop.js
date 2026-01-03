@@ -19,7 +19,8 @@ function loop(t) {
   if (
     state.gameStarted &&
     !state.gameOver &&
-    entities.remainingTargets === 0
+    entities.remainingTargets === 0 &&
+    entities.targets.length > 0
   ) {
     victoryHandler();
   }

@@ -13,6 +13,7 @@ function dropBomb() {
 
   playSound("release_bomb");
   state.bombs--;
+  state.bombsUsed = (state.bombsUsed || 0) + 1;
   updateHUD();
 
   const bomb = {
@@ -41,8 +42,7 @@ function explodeBomb(bomb) {
     const d = distance(bomb, entity);
 
     let dmg = 0;
-    if (d < radius * 0.4) dmg = 1.5;
-    else if (d < radius * 0.7) dmg = 1;
+    if (d < radius * 0.7) dmg = 1;
 
     if (dmg > 0) {
       hitSomething = true;
@@ -60,7 +60,7 @@ function explodeBomb(bomb) {
     if (checkHit(t, CONFIG_DEFAULTS.targetRadius)) {
       layerTargets.removeLayer(t.marker);
       entities.targets.splice(i, 1);
-      entities.remainingTargets--;
+      entities.remainingTargets = entities.targets.length;
 
       if (entities.remainingTargets <= 0 && !state.gameOver) {
         state.gameOver = true;
