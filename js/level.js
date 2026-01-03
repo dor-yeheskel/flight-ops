@@ -250,6 +250,12 @@ function setNightMode(on) {
 
 
 function loadLevel(levelId) {
+  activeFires.length = 0;
+  nightBursts.length = 0;
+
+  if (nightCtx) {
+    nightCtx.clearRect(0, 0, nightCanvas.width, nightCanvas.height);
+  }
   setNightMode(!!levelToData[levelId].night);
   resetLayersAndEntities();
   nightBursts.length = 0;
