@@ -87,20 +87,7 @@ function victoryHandler() {
     isNewRecord = true;
   }
 
-  if (isNewRecord) {
-    document.getElementById("endSubtitle").innerHTML += `
-      <div style="margin-top:10px; color:#00ff88;">
-        🏆 NEW RECORD
-      </div>
-    `;
-  } else if (prev) {
-    document.getElementById("endSubtitle").innerHTML += `
-      <div style="opacity:0.6; margin-top:10px;">
-        Best: ${prev.score}
-      </div>
-    `;
-  }
-  
+
   progress.unlockedLevels ||= [];
   if (nextLevel && !progress.unlockedLevels.includes(nextLevel)) {
     progress.unlockedLevels.push(nextLevel);
@@ -151,14 +138,6 @@ function victoryHandler() {
 
 
   `;
-
-  if (isNewRecord) {
-    document.getElementById("endSubtitle").innerHTML += `
-      <div style="margin-top:10px; color:#00ff88; font-weight:600;">
-        🏆 NEW RECORD
-      </div>
-    `;
-  }
 
   const targetsEl = document.getElementById("targetsCount");
   const bombsEl = document.getElementById("bombsUsedCount");
@@ -217,6 +196,15 @@ function victoryHandler() {
     rankEl.classList.toggle("rank-gold", rank.includes('Gold'));
   }, 2600);
 
+  if (isNewRecord) {
+    setTimeout(() => {
+      document.getElementById("endSubtitle").innerHTML += `
+        <div style="margin-top:12px; color:#00ff88; font-weight:700;">
+          🏆 NEW RECORD
+        </div>
+      `;
+    }, 3000);
+  }
 
   const btn = document.getElementById("primaryActionBtn");
 
@@ -233,4 +221,34 @@ function victoryHandler() {
 
   endScreenEl.style.display = "flex";
   endScreenEl.focus();
+  if (!nextLevel) {
+    showFinalCompletionOnce();
+  }
+}
+
+
+function showFinalCompletionOnce() {
+  const KEY = "flight_game_completed_once";
+
+  // already shown before
+  if (localStorage.getItem(KEY)) return;
+
+  const el = document.createElement("div");
+  el.className = "final-complete";
+  el.textContent = "✈️ FINAL MISSION COMPLETE";
+
+  endScreenEl.appendChild(el);
+
+  // fade in
+  requestAnimationFrame(() => {
+    el.classList.add("show");
+  });
+
+  // fade out & cleanup
+  setTimeout(() => {
+    el.classList.remove("show");
+    setTimeout(() => el.remove(), 600);
+  }, 2200);
+
+  localStorage.setItem(KEY, "1");
 }

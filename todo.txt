@@ -1,17 +1,24 @@
-Gameplay:
-  1. If no bombs and no refill -> Mission failed.
-  2. If no bombs but refill -> "Go to base" if there is a bse + radar show row to the base.
-
-  3. Maybe description for levels? or too verbose.
-  4. When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
+Nice to have:
+  p0:
+    When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
     Maybe some effect as well - but not "casual" style of conffeti.
-  5. Should we have the red circles things in the game?
 
-  The grid thingy retrued .. maybe try to do git "bisect" to see 
-  if every time it's there..
+  p1:
+    Maybe description for levels? or too verbose.
+
+Gameplay:
+  p0:
+    If base exists -> show an arrow in radar to it (תכלת).
+    If no bombs, still targets left and no base -> failed the mission.
+
+  p0:
+    Should we have the red circles things in the game?
 
 Production:
-  1. How to use it? just load it from github url?
+  p1:
+    How to use it? just load it from github url?
+
+Levels.
 
 ==========================================================
 1. Atom bomb?
