@@ -42,7 +42,7 @@ const SIZE_STATS = {
 };
 
 const FIRE_SCALE_BY_SIZE = {
-  small: 1.2,
+  small: 1.5,
   medium: 2,
   big: 2.5
 };
