@@ -129,7 +129,7 @@ function addTarget(target) {
       html: `<div style="font-size:${32 * stats.scale}px">${target.emoji || "🏭"}</div>`,
       className: "",
       iconSize: [60, 60],
-      iconAnchor: [30, 50]
+      iconAnchor: [30, 30]
     })
   }).addTo(layerTargets);
 
@@ -179,7 +179,6 @@ function spawnRadarsForLevel(levelId) {
 function applyDamage(entity, dmg) {
   entity.hp -= dmg;
 
-  // צור אש רק פעם אחת
   if (!entity.fire) {
     const fireScale = FIRE_SCALE_BY_SIZE[entity.size || "medium"];
     entity.fire = fireEffect(entity, fireScale);
@@ -205,7 +204,9 @@ function addRadar(cfg) {
 
   const marker = L.marker([cfg.lat, cfg.lng], {
     icon: L.divIcon({
-      html: `<div style="font-size:${40 * type.scale}px">📡</div>`
+      html: `<div style="font-size:${40 * type.scale}px">📡</div>`,
+      iconSize: [60, 60],
+      iconAnchor: [30, 30]
     })
   }).addTo(layerRadars);
 

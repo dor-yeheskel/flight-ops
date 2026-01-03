@@ -46,3 +46,15 @@ const FIRE_SCALE_BY_SIZE = {
   medium: 2,
   big: 2.5
 };
+
+const FIRE_X_OFFSET_PX = {
+  small:  10,
+  medium: 25,
+  big:    40
+};
+
+const FIRE_Y_OFFSET_PX = {
+  small:  20,
+  medium: 40,
+  big:    60
+};

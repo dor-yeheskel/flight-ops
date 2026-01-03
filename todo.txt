@@ -1,15 +1,14 @@
-Problem - the night fire keep firing if I redu the stage.
-
-UI/UX feeling:
-  2. Gold effect also in the final Mission Complete (Gold) - and make sure it's on the table.
-  6. When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
-    Maybe some effect as well - but not "casual" style of conffeti.
-
 Gameplay:
-  0. הסטייה של אימוג'י גדול מהמרכז שלהם בפועל. <- IMPORTANT!!!
   1. If no bombs and no refill -> Mission failed.
-  2. If no bombs but refill -> "Go to base" + radar show row to the base.
-  3. Maybe description for levels?
+  2. If no bombs but refill -> "Go to base" if there is a bse + radar show row to the base.
+
+  3. Maybe description for levels? or too verbose.
+  4. When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
+    Maybe some effect as well - but not "casual" style of conffeti.
+  5. Should we have the red circles things in the game?
+
+  The grid thingy retrued .. maybe try to do git "bisect" to see 
+  if every time it's there..
 
 Production:
   1. How to use it? just load it from github url?
@@ -20,23 +19,24 @@ Production:
 
 F11?
 
-Mission with 1 bomb - and need to return to base every time.
-Mission with day and same in night (elactraz)
 Levels:
-שלב 1: אין רדארים (ללמוד שליטה)
-שלב 2: רדארים אבל אין טילים חכמים
-שלב 3: רדארים חכמים, אבל יש הרבה מחסה
-שלב 4: מעט מטרות, אבל מוגנות מאוד
-שלב 5: הרבה מטרות חלשות + זמן מוגבל
+  Mission with 1 bomb - and need to return to base every time.
+  Mission with day and same in night (elactraz)
+  Levels:
+  שלב 1: אין רדארים (ללמוד שליטה)
+  שלב 2: רדארים אבל אין טילים חכמים
+  שלב 3: רדארים חכמים, אבל יש הרבה מחסה
+  שלב 4: מעט מטרות, אבל מוגנות מאוד
+  שלב 5: הרבה מטרות חלשות + זמן מוגבל
 
-לילה גם.
+  לילה גם.
 
-אלקרטז גם.
-elactraz day
-elactraz night
+  אלקרטז גם.
+  elactraz day
+  elactraz night
 
-Maybe some stages that require go to base and then go again then need to go
-thor some radars.
+  Maybe some stages that require go to base and then go again then need to go
+  thor some radars.
 
 ==========================================================
 Remove my data:

@@ -11,9 +11,9 @@
       "lng": 34.4538
     },
     "targetLocations": [
-      { "lat": 31.5195, "lng": 34.4698, "emoji": "☢️", "size": "small" },
-      { "lat": 31.5195, "lng": 34.4618, "emoji": "☢️", "size": "medium" },
-      { "lat": 31.5195, "lng": 34.4548, "emoji": "☢️", "size": "big" }
+      { "lat": 31.5195, "lng": 34.4698, "emoji": "🏭", "size": "small" },
+      { "lat": 31.5195, "lng": 34.4618, "emoji": "🏭", "size": "medium" },
+      { "lat": 31.5195, "lng": 34.4548, "emoji": "🏭", "size": "big" }
     ],
     "radarLocations": [
       {

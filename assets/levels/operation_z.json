@@ -34,7 +34,7 @@
       }
     ],
     "limits": {
-      "maxBombs": 4,
+      "maxBombs": 110,
       "maxStealth": 3
     }
 }

@@ -3,12 +3,23 @@
 function fireEffect(target) {
   if (!target) return;
 
-  const pos = target.marker
+  const baseLatLng = target.marker
     ? target.marker.getLatLng()
     : { lat: target.lat, lng: target.lng };
 
   const scale =
     FIRE_SCALE_BY_SIZE[target.size || "medium"] || 1.2;
+
+  const offsetY = FIRE_Y_OFFSET_PX[target.size || "medium"];
+  const offsetX = FIRE_X_OFFSET_PX[target.size || "medium"];
+
+  const p = map.latLngToContainerPoint(baseLatLng);
+
+  const p2 = L.point(
+    p.x + offsetX,
+    p.y + offsetY
+  );
+  const pos = map.containerPointToLatLng(p2);
 
   if (target.fire) {
     const el = target.fire.getElement();
@@ -22,12 +33,13 @@ function fireEffect(target) {
   const fireMarker = L.marker(pos, {
     icon: L.divIcon({
       html: `<div class="fire-emoji" style="
-        font-size:${28 * scale}px;
+        font-size:${20 * scale}px;
       ">🔥</div>`,
       className: "",
       iconSize: [32 * scale, 32 * scale],
       iconAnchor: [16 * scale, 16 * scale]
-    })
+    }),
+    zIndexOffset: 1000,
   }).addTo(layerFx);
 
   target.fire = fireMarker;
@@ -43,6 +55,7 @@ function fireEffect(target) {
 
 function explosionEffect(lat, lng) {
   const boom = L.marker([lat, lng], {
+    zIndexOffset: 1000,
     icon: L.divIcon({ html: "💥", className: "explosion" })
   }).addTo(layerFx);
 

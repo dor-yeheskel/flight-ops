@@ -28,15 +28,17 @@ map.setMinZoom(14);
 map.setMaxZoom(14);
 map.createPane("planePane");
 map.getPane("planePane").style.zIndex = 7001;
+map.createPane("fxPane");
+map.getPane("fxPane").style.zIndex = 650;
 
 
 
-const layerTargets = L.layerGroup().addTo(map);
-const layerRadars  = L.layerGroup().addTo(map);
-const layerBombs   = L.layerGroup().addTo(map);
-const layerMissiles= L.layerGroup().addTo(map);
-const layerFx      = L.layerGroup().addTo(map);
-const layerUi      = L.layerGroup().addTo(map);
+const layerTargets  = L.layerGroup().addTo(map);
+const layerRadars   = L.layerGroup().addTo(map);
+const layerBombs    = L.layerGroup().addTo(map);
+const layerMissiles = L.layerGroup().addTo(map);
+const layerFx       = L.layerGroup({ pane: "fxPane" }).addTo(map);
+const layerUi       = L.layerGroup().addTo(map);
 
 /* aim marker */
 const aimMarker = L.marker([0, 0], {
