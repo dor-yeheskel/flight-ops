@@ -1,9 +1,11 @@
-Remove drop down.
+Glow white effect when starting level - works for the first time - but then esc -> and play -> no glow.
+
+When passing a level - then clicking on esc - it is not recorded the passing.
+
 
 Problem - the night fire keep firing if I redu the stage.
 
 UI/UX feeling:
-  1. Glow white effect when starting level - works for the first time - but then esc -> and play -> no glow.
   2. Gold effect also in the final Mission Complete (Gold)
   3. Hover on button - sound.
   4. Clicking on button - sound.

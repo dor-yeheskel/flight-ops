@@ -50,7 +50,7 @@ window.addEventListener("keydown", e => {
   if (code === "Enter" || code === "Space") {
     e.preventDefault();
 
-    // ✅ GAME OVER → כפתור
+    // ✅ GAME OVER
     if (currentState === GAME_STATE.GAMEOVER) {
       document.getElementById("primaryActionBtn")?.click();
       return;
@@ -80,10 +80,12 @@ window.addEventListener("keydown", e => {
       }
 
       if (code === "Enter" || code === "Space") {
-        startBtn.click();
+        if (!state.levelId) return;
+        playSound("clicked");
+        loadLevel(state.levelId);
+        startGame();
         return;
       }
-
 
     }
 

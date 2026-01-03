@@ -5,7 +5,7 @@ function renderProgressTable() {
 
   let html = `
     <div class="progressRow header">
-      <div>Level</div>
+      <div>Mission</div>
       <div>Rank</div>
       <div>Score</div>
     </div>
@@ -18,38 +18,60 @@ function renderProgressTable() {
     const unlocked = i < progress.unlockedCount;
 
     html += `
-      <div class="progressRow ${unlocked ? "" : "locked"}">
+      <div class="progressRow
+        ${unlocked ? "" : "locked"}
+        ${unlocked && !data ? "unplayed" : ""}
+      ">
+
         <div>${lvl.displayName}</div>
         <div>
-          ${unlocked && data ? data.rank : "🔒"}
+          ${!unlocked ? "🔒" : (data ? data.rank : "—")}
         </div>
         <div>
-          ${unlocked && data ? data.score : "🔒"}
+          ${!unlocked ? "🔒" : (data ? data.score : "—")}
         </div>
       </div>
     `;
   }
 
   el.innerHTML = html;
+  const rows = el.querySelectorAll(".progressRow:not(.header)");
+
+  rows.forEach((row, i) => {
+    if (row.classList.contains("locked")) return;
+
+    row.addEventListener("click", () => {
+      rows.forEach(r => r.classList.remove("selected"));
+      row.classList.add("selected");
+      state.levelId = levelOrder[i];
+    });
+  });
+
 }
 
 
 
 function moveMenuSelection(dir) {
-  const opts = Array.from(levelSelectEl.options);
-  if (!opts.length) return;
+  const rows = Array.from(
+    document.querySelectorAll(".progressRow:not(.header):not(.locked)")
+  );
+  if (!rows.length) return;
 
-  let i = levelSelectEl.selectedIndex;
-  if (i < 0) i = 0;
+  let idx = rows.findIndex(r => r.classList.contains("selected"));
 
-  for (let tries = 0; tries < opts.length; tries++) {
-    i = (i + dir + opts.length) % opts.length;
-    if (!opts[i].disabled) {
-      levelSelectEl.selectedIndex = i;
-      levelSelectEl.dispatchEvent(new Event("change", { bubbles: true }));
-      return;
-    }
+  if (idx === -1) idx = 0;
+  
+  const prevIdx = idx;
+  const newIdx = (idx + dir + rows.length) % rows.length;
+
+  if (newIdx !== prevIdx) {
+    playSound("key_arrow");
   }
+
+  rows.forEach(r => r.classList.remove("selected"));
+  rows[newIdx].classList.add("selected");
+
+  state.levelId = levelOrder[newIdx];
 }
 
 function updateHUD() {

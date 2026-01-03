@@ -32,12 +32,13 @@ function goToMenu() {
 
   endScreenEl.style.display = "none";
   introEl.style.display = "flex";
-  if (state.levelId) {
-    levelSelectEl.value = state.levelId;
-  }
-  levelSelectEl.style.boxShadow = "0 0 0 2px rgba(0,255,150,.4)";
 
-  levelSelectEl.focus();
+  // highlight selected level in progress table
+  const rows = document.querySelectorAll(".progressRow:not(.header)");
+  rows.forEach((row, i) => {
+    row.classList.toggle("selected", levelOrder[i] === state.levelId);
+  });
+
 }
 
 function victoryHandler() {
@@ -97,15 +98,20 @@ function victoryHandler() {
       </div>
     `;
   }
-
+  
+  progress.unlockedLevels ||= [];
   if (nextLevel && !progress.unlockedLevels.includes(nextLevel)) {
     progress.unlockedLevels.push(nextLevel);
   }
+  progress.unlockedCount = Math.max(
+    progress.unlockedCount,
+    progress.unlockedLevels.length + 1
+  );
+
 
   saveProgress(progress);
   localStorage.setItem("lastPlayedLevel", state.levelId);
   renderProgressTable();
-  populateLevelSelect();
 
   // ===== UI =====
   const title = document.getElementById("endTitle");

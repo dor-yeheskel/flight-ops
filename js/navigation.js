@@ -22,31 +22,6 @@ function nextLevel() {
   loadLevel(levelOrder[nextIndex]);
 }
 
-/* intro UI */
-function populateLevelSelect() {
-  levelSelectEl.innerHTML = "";
-
-  for (let i = 0; i < levelOrder.length; i++) {
-    const id = levelOrder[i];
-    const opt = document.createElement("option");
-
-    opt.value = id;
-    opt.textContent = levelToData[id].displayName;
-
-    if (i >= progress.unlockedCount) {
-      opt.disabled = true;
-      opt.textContent += " 🔒";
-    }
-
-    levelSelectEl.appendChild(opt);
-  }
-
-  levelSelectEl.value = levelOrder[0];
-
-  hudLevelEl.textContent =
-    levelToData[levelSelectEl.value].displayName;
-}
-
 /* ========= BOOT ========= */
 
 window.addEventListener('DOMContentLoaded', async function() {
@@ -69,8 +44,7 @@ window.addEventListener('DOMContentLoaded', async function() {
   endStealthEl = document.getElementById("endStealth");
   endBombsEl = document.getElementById("endBombs");
   endRadarsEl = document.getElementById("endRadars");
-  
-  levelSelectEl = document.getElementById("levelSelect");
+
   startBtn = document.getElementById("startBtn");
 
   muteBtn = document.getElementById("muteBtn");
@@ -91,17 +65,14 @@ window.addEventListener('DOMContentLoaded', async function() {
   }).addTo(map);
   
   renderProgressTable();
-  populateLevelSelect();
+  state.levelId = levelOrder[0];
+  document.querySelector(".progressRow:not(.header)")?.classList.add("selected");
+
   progress.unlockedCount = Math.max(
     1,
     Math.min(progress.unlockedCount || 1, levelOrder.length)
   );
   
-  startBtn.addEventListener("click", () => {
-    loadLevel(levelSelectEl.value);
-    startGame();
-  });
-
   window.addEventListener("beforeunload", () => {
     if (state.levelId) {
       localStorage.setItem("lastPlayedLevel", state.levelId);

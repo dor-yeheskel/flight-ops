@@ -11,8 +11,11 @@ const sounds = {
   defeat: new Audio("assets/sounds/defeat.wav"),
   hit: new Audio("assets/sounds/hit.wav"),
   destroyed: new Audio("assets/sounds/destroyed.wav"),
+  key_arrow: new Audio("assets/sounds/key_arrow.wav"),
+  clicked: new Audio("assets/sounds/clicked.wav"),
 };
 
+sounds.clicked.volume = 0.4;
 
 function playSound(name) {
   if (!soundEnabled) return;
