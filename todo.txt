@@ -1,8 +1,4 @@
 Nice to have:
-  p0:
-    When ending game: "BACK TO MENU" -> need some message in addition to that of congruations.
-    Maybe some effect as well - but not "casual" style of conffeti.
-
   p1:
     Maybe description for levels? or too verbose.
 
@@ -10,7 +6,6 @@ Gameplay:
   p0:
     If base exists -> show an arrow in radar to it (תכלת).
     If no bombs, still targets left and no base -> failed the mission.
-
   p0:
     Should we have the red circles things in the game?
 
