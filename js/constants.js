@@ -55,7 +55,7 @@ const FIRE_X_OFFSET_PX = {
 
 const FIRE_Y_OFFSET_PX = {
   small:  20,
-  medium: 40,
+  medium: 50,
   big:    60
 };
 
