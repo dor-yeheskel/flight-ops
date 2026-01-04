@@ -146,6 +146,9 @@ function victoryHandler() {
   const finalEl = document.getElementById("finalScore");
   const rankEl = document.getElementById("rankDisplay");
 
+  const hintPrimary = document.getElementById("endHintPrimary");
+  const hintSecondary = document.getElementById("endHintSecondary");
+
   // reset
   bombsEl.textContent = "0";
   stealthEl.textContent = "0";
@@ -209,14 +212,21 @@ function victoryHandler() {
   const btn = document.getElementById("primaryActionBtn");
 
   if (nextLevel) {
+    // normal victory → next level
+    btn.style.display = "inline-block";
     btn.textContent = "▶ NEXT LEVEL";
     btn.onclick = () => {
       loadLevel(nextLevel);
       startGame();
     };
+    hintPrimary.textContent = "Press Enter / Space to continue";
+    hintSecondary.style.display = "block";
   } else {
-    btn.textContent = "▶ BACK TO MENU";
+    // final victory → no button, keyboard only
+    btn.style.display = "none";
     btn.onclick = () => goToMenu();
+    hintPrimary.textContent = "Press Enter / Space to return to menu";
+    hintSecondary.style.display = "none";
   }
 
   endScreenEl.style.display = "flex";

@@ -2,10 +2,7 @@ Gameplay:
   p0:
     If base exists -> show an arrow in radar to it (תכלת).
     If no bombs, still targets left and no base -> failed the mission.
-  p0:
-    Should we have the red circles things in the game?
 
-Right shift + Right enter.
 
 Levels.
 Production: Try the GitHub pages (pinned chat).

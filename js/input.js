@@ -13,7 +13,7 @@ function normCode(e) {
 
 window.addEventListener("keydown", e => {
   const code = normCode(e);
-
+  const isEnter = (code === "Enter" || code === "NumpadEnter");
   if (e.code === "KeyP") {
     togglePause();
     return;
@@ -47,7 +47,7 @@ window.addEventListener("keydown", e => {
     return;
   }
 
-  if (code === "Enter" || code === "Space") {
+  if (isEnter) {
     e.preventDefault();
 
     // ✅ GAME OVER
@@ -79,7 +79,7 @@ window.addEventListener("keydown", e => {
         return;
       }
 
-      if (code === "Enter" || code === "Space") {
+      if (isEnter || code === "Space") {
         if (!state.levelId) return;
         playSound("clicked");
         loadLevel(state.levelId);
@@ -88,8 +88,9 @@ window.addEventListener("keydown", e => {
       }
 
     }
-
-    // ✅ PLAYING → פצצה
+  }
+  if (code === "Space") {
+    // ✅ PLAYING
     if (currentState === GAME_STATE.PLAYING && !state.paused) {
       dropBomb();
       return;
@@ -100,7 +101,11 @@ window.addEventListener("keydown", e => {
   if (currentState !== GAME_STATE.PLAYING) return;
 
   if (!state.keys[code]) {
-    if (code === "ShiftLeft" && state.stealthUses > 0 && !state.stealthActive) {
+    if (
+      (code === "ShiftLeft" || code === "ShiftRight") &&
+      state.stealthUses > 0 &&
+      !state.stealthActive
+    ) {
       state.stealthActive = true;
       state.stealthUsed = (state.stealthUsed || 0) + 1;
       state.stealthUses--;
