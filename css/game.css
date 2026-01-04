@@ -649,3 +649,27 @@ body.night .fire-emoji {
 .final-complete.show {
   opacity: 1;
 }
+
+/* ===== THREAT INDICATOR ===== */
+
+#threatIndicator {
+  position: absolute;
+  left: 24px;
+  top: 185px;
+  font-size: 22px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  filter: drop-shadow(0 0 6px rgba(255,80,80,0.6));
+  z-index: 9999;
+  transform: translateY(2px);
+}
+
+#threatIndicator.active {
+  opacity: 0.85;
+}
+
+#threatIndicator.stealth {
+  opacity: 0.35;
+  filter: none;
+}

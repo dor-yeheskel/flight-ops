@@ -94,17 +94,30 @@ function loop(t) {
     }
 
     // radars firing
+    let underThreat = false;
     for (const r of entities.radars) {
-      if (!r.alive || state.stealthActive) continue;
+      if (!r.alive) continue;
 
       const d = distance(state, r);
-      if (d < r.range && r.cooldown <= 0) {
+
+      // --- THREAT:
+      if (d < r.range) {
+        underThreat = true;
+      }
+
+      // --- FIRING:
+      if (!state.stealthActive && d < r.range && r.cooldown <= 0) {
         launchMissile(r);
         r.cooldown = Math.max(0.1, state.rocketFreq);
       }
 
-      r.cooldown -= dt;
+      // --- cooldown stealth ---
+      if (!state.stealthActive) {
+        r.cooldown -= dt;
+      }
     }
+
+    setThreat(underThreat);
 
     // missiles movement
     for (let i = entities.missiles.length - 1; i >= 0; i--) {

@@ -5,6 +5,8 @@ Gameplay:
   p0:
     Should we have the red circles things in the game?
 
+Right shift + Right enter.
+
 Levels.
 Production: Try the GitHub pages (pinned chat).
 

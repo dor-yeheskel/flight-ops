@@ -256,3 +256,12 @@ function drawNight() {
   }
   ctx.globalCompositeOperation = "source-over";
 }
+
+function setThreat(active) {
+  const el = document.getElementById("threatIndicator");
+  if (!el) return;
+
+  el.classList.toggle("active", active);
+  el.classList.toggle("stealth", active && state.stealthActive);
+}
+
