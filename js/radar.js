@@ -98,6 +98,44 @@ function drawRadar() {
     }
   }
 
+  // ===== BASE ARROW WHEN NO BOMBS (OUT OF RANGE) =====
+  if (state.hasBase && state.bombs <= 0) {
+    const d = distance(state, state.base);
+    if (d > CONFIG_DEFAULTS.radarRangeOnMinimap) {
+      const angle = Math.atan2(
+        state.base.lng - state.lng,
+        state.base.lat - state.lat
+      );
+
+      const r = cx - 12;
+      const x = cx + Math.sin(angle) * r;
+      const y = cy - Math.cos(angle) * r;
+
+      ctx.save();
+      ctx.setLineDash([6, 4]);
+      ctx.strokeStyle = "#66cccc";
+      ctx.lineWidth = 2;
+
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+
+      ctx.setLineDash([]);
+
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+
+      ctx.fillStyle = "#66cccc";
+      ctx.beginPath();
+      ctx.moveTo(0, -6);
+      ctx.lineTo(4, 4);
+      ctx.lineTo(-4, 4);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+  }
   // ======================
   // OUT OF RANGE ARROWS
   // ======================

@@ -16,6 +16,25 @@ function loop(t) {
   state.gameTime += dt;
   last = t;
 
+  // ===== NO BOMBS (AND NONE IN AIR) + NO BASE + TARGETS LEFT => FAIL =====
+  if (
+    !state.gameOver &&
+    state.bombs <= 0 &&
+    entities.bombs.length === 0 && // <-- CRITICAL FIX
+    !state.hasBase &&
+    entities.remainingTargets > 0
+  ) {
+    state.gameOver = true;
+
+    endScreenTimeout = setTimeout(() => {
+      gameOverHandler();
+    }, 800);
+
+    requestAnimationFrame(loop);
+    return;
+  }
+
+
   if (
     state.gameStarted &&
     !state.gameOver &&

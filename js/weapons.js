@@ -81,12 +81,11 @@ function explodeBomb(bomb) {
       layerRadars.removeLayer(r.circle);
     }
   }
-  // 🔊 סאונד
   playSound("explode");
   if (destroySomething) {
-    playSound("destroyed");   // 💥 נהרס
+    playSound("destroyed");
   } else if (hitSomething) {
-    playSound("hit");         // 🔫 רק פגיעה
+    playSound("hit");
   }
 }
 
