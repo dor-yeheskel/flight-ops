@@ -1,12 +1,3 @@
-Nice to have:
-  p1:
-    Maybe description for levels? or too verbose.
-
-Feeling:
-  p0:
-    Fire on big building - should increase it's size a bit? or duplicate? so user can 
-    see that there is a second hit.
-
 Gameplay:
   p0:
     If base exists -> show an arrow in radar to it (תכלת).
@@ -14,11 +5,8 @@ Gameplay:
   p0:
     Should we have the red circles things in the game?
 
-Production:
-  p1:
-    How to use it? just load it from github url?
-
 Levels.
+Production: Try the GitHub pages (pinned chat).
 
 ==========================================================
 1. Atom bomb?

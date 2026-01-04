@@ -175,26 +175,48 @@ function spawnRadarsForLevel(levelId) {
 
 }
 
-
 function applyDamage(entity, dmg) {
   entity.hp -= dmg;
 
+  // ===== ensure fire exists =====
   if (!entity.fire) {
-    const fireScale = FIRE_SCALE_BY_SIZE[entity.size || "medium"];
-    entity.fire = fireEffect(entity, fireScale);
+    fireEffect(entity);
   }
 
   if (entity.hp <= 0) {
-    if (entity.fire) {
-      setTimeout(() => {
-        layerFx.removeLayer(entity.fire);
-        entity.fire = null;
-      }, 4000);
-    }
-    return true; // destroyed
+    // destroyed → keep last fire size, do nothing
+    return true;
   }
 
-  return false; // still alive
+  // ===== scale fire by remaining HP =====
+  if (entity.fire) {
+    const root = entity.fire.getElement();
+    const flame = root?.querySelector(".fire-emoji");
+
+    if (flame) {
+      const effectiveHp = Math.max(entity.hp, 0);
+      const hpRatio = effectiveHp / entity.maxHp;
+
+      let scale = 1.0;
+      for (const step of FIRE_SCALE_BY_HP_RATIO) {
+        if (hpRatio > step.min) {
+          scale = step.scale;
+          break;
+        }
+      }
+
+      flame.style.transformOrigin = "50% 50%";
+      flame.style.transform = `scale(${scale})`;
+    }
+  }
+
+
+  // ===== destroyed =====
+  if (entity.hp <= 0) {
+    return true;
+  }
+
+  return false;
 }
 
 

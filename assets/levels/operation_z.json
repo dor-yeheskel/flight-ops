@@ -13,24 +13,14 @@
     ],
     "radarLocations": [
       {
-        "lat": 31.6200,
-        "lng": 34.5400,
+        "lat": 37.69913,
+        "lng": -122.39023,
         "size": "big",
 
         "rocketSpeed": 20000,
         "rocketFreq": 0.7,
-        "smartRocketsEvery": 3,
+        "smartRocketsEvery": 10,
         "smartRocketSpeedFactor": 0.7
-      },
-      {
-        "lat": 31.6000,
-        "lng": 34.6000,
-        "size": "medium",
-
-        "rocketSpeed": 25000,
-        "rocketFreq": 0.6,
-        "smartRocketsEvery": 4,
-        "smartRocketSpeedFactor": 0.6
       }
     ],
     "limits": {

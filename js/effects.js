@@ -29,11 +29,13 @@ function fireEffect(target) {
     return;
   }
   if (target.fire) return;
+  const baseSize =
+    FIRE_BASE_SIZE_PX[target.size || "medium"] ?? 20;
 
   const fireMarker = L.marker(pos, {
     icon: L.divIcon({
       html: `<div class="fire-emoji" style="
-        font-size:${20 * scale}px;
+        font-size:${baseSize * scale}px;
       ">🔥</div>`,
       className: "",
       iconSize: [32 * scale, 32 * scale],

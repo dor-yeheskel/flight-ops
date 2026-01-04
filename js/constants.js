@@ -49,7 +49,7 @@ const FIRE_SCALE_BY_SIZE = {
 
 const FIRE_X_OFFSET_PX = {
   small:  10,
-  medium: 25,
+  medium: 35,
   big:    40
 };
 
@@ -58,3 +58,19 @@ const FIRE_Y_OFFSET_PX = {
   medium: 40,
   big:    60
 };
+
+
+// ===== FIRE BASE SIZE PER ENTITY SIZE =====
+const FIRE_BASE_SIZE_PX = {
+  small:  24,
+  medium: 15,
+  big:    20
+};
+
+// ===== FIRE INTENSITY TUNING =====
+// scale by remaining HP ratio
+const FIRE_SCALE_BY_HP_RATIO = [
+  { min: 0.66, scale: 1.0 },  // light fire
+  { min: 0.33, scale: 1.4 },  // medium fire
+  { min: 0.0,  scale: 1.9 }   // heavy fire
+];
