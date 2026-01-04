@@ -82,7 +82,8 @@ function applyLevelConfig(levelId) {
   state.stealthUses = state.maxStealth;
 
   if (hudLevelEl) {
-    hudLevelEl.textContent = lvl.displayName;
+    const missionNumber = state.levelIndex + 1;
+    hudLevelEl.textContent = `Mission ${missionNumber}: ${lvl.displayName}`;
   }
 }
 

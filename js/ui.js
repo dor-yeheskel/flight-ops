@@ -5,6 +5,7 @@ function renderProgressTable() {
 
   let html = `
     <div class="progressRow header">
+      <div>#</div>
       <div>Mission</div>
       <div>Rank</div>
       <div>Score</div>
@@ -23,7 +24,7 @@ function renderProgressTable() {
         ${unlocked && !data ? "unplayed" : ""}
         "
         data-level-id="${id}">
-
+        <div class="mission-index">${i + 1}</div>
         <div>${lvl.displayName}</div>
         <div class="${data?.rank?.includes('Gold') ? 'rank-gold' : ''}">
           ${!unlocked ? "🔒" : (data ? data.rank : "—")}

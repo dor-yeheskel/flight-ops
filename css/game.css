@@ -361,16 +361,16 @@ html, body {
 
 .progressRow {
   display: grid;
-  grid-template-columns: 220px 110px 70px;
+  grid-template-columns: 28px 180px 110px 70px;
   padding: 8px 4px;
   align-items: center;
-  column-gap: 24px;
+  column-gap: 16px;
   cursor: pointer;
 }
 
 .progressRow.header {
   font-weight: 600;
-  opacity: 0.7;
+  opacity: 0.55;
   border-bottom: 1px solid rgba(255,255,255,0.15);
   margin-bottom: 6px;
 }
@@ -379,6 +379,7 @@ html, body {
 .progressRow > div:nth-child(3) {
   text-align: center;
   font-variant-numeric: tabular-nums;
+  font-weight: 500;
 }
 
 .progressRow > div:first-child {
@@ -417,6 +418,15 @@ html, body {
 .progressRow.locked > div {
   color: #7a7a7a;
 }
+
+.mission-index {
+  opacity: 0.45;
+  font-size: 13px;
+  text-align: right;
+  padding-right: 6px;
+}
+
+
 .locked {
   opacity: 0.35;
   filter: grayscale(1);

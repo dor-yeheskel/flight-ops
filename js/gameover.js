@@ -219,13 +219,13 @@ function victoryHandler() {
       loadLevel(nextLevel);
       startGame();
     };
-    hintPrimary.textContent = "Press Enter / Space to continue";
+    hintPrimary.textContent = "Press Enter to continue";
     hintSecondary.style.display = "block";
   } else {
     // final victory → no button, keyboard only
     btn.style.display = "none";
     btn.onclick = () => goToMenu();
-    hintPrimary.textContent = "Press Enter / Space to return to menu";
+    hintPrimary.textContent = "Press Enter to return to menu";
     hintSecondary.style.display = "none";
   }
 

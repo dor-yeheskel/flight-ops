@@ -1,38 +1,20 @@
 Gameplay:
   p0:
-    If base exists -> show an arrow in radar to it (תכלת).
-    If no bombs, still targets left and no base -> failed the mission.
+    If no bombs:
+      If base exists:
+        Show an arrow in radar to it and remove it when there is at least one bomb.
+      Else:
+        still targets left? failed the mission.
 
+  p0:
+    In the base level - explain user about that (or the arrow that starts)
 
-Levels.
-Production: Try the GitHub pages (pinned chat).
-
-==========================================================
-1. Atom bomb?
-2. Moving target?
-
-F11?
-
-Levels:
-  Mission with 1 bomb - and need to return to base every time.
-  Mission with day and same in night (elactraz)
-  Levels:
-  שלב 1: אין רדארים (ללמוד שליטה)
-  שלב 2: רדארים אבל אין טילים חכמים
-  שלב 3: רדארים חכמים, אבל יש הרבה מחסה
-  שלב 4: מעט מטרות, אבל מוגנות מאוד
-  שלב 5: הרבה מטרות חלשות + זמן מוגבל
-
-  לילה גם.
-
-  אלקרטז גם.
-  elactraz day
-  elactraz night
-
-  Maybe some stages that require go to base and then go again then need to go
-  thor some radars.
+Next:
+  * Missions: https://docs.google.com/document/d/1XEAaBC2EewAXH4tuR27LtHHdHiNKEPWIYdB_nU2scDM/edit?tab=t.0
+  * Production: Try the GitHub pages (pinned chat) and after Edo feedback -> itch.
 
 ==========================================================
-Remove my data:
-  localStorage.removeItem("flight_game_progress_v1");
+Remove my data: open console:
+  localStorage.clear();
+  sessionStorage.clear();
   location.reload();
