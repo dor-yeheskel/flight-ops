@@ -1,11 +1,3 @@
-Gameplay - Last MUST HAVE Feature:
-  p0:
-    If no bombs:
-      If base exists:
-        Show an arrow in radar to it and remove it when there is at least one bomb.
-      Else:
-        still targets left? failed the mission.
-
 Next:
   * Missions: https://docs.google.com/document/d/1XEAaBC2EewAXH4tuR27LtHHdHiNKEPWIYdB_nU2scDM/edit?tab=t.0
   * Production: Try the GitHub pages (pinned chat) and after Edo feedback -> itch.
