@@ -15,6 +15,30 @@ const sounds = {
   clicked: new Audio("assets/sounds/clicked.wav"),
 };
 
+const V = {
+  ui: 0.45,
+  fx: 0.65,
+  impact: 0.75,
+  state: 0.5,
+  end: 0.65,
+};
+
+sounds.key_arrow.volume = V.ui;
+sounds.clicked.volume   = V.ui;
+
+sounds.missile_lock.volume  = V.fx;
+sounds.release_bomb.volume  = V.fx;
+sounds.rocket_launch.volume = V.fx;
+sounds.hit.volume           = V.fx;
+
+sounds.explode.volume   = V.impact;
+sounds.destroyed.volume = V.impact;
+
+sounds.stealth.volume = V.state;
+sounds.fuel.volume    = V.state;
+
+sounds.victory.volume = V.end;
+sounds.defeat.volume  = V.end;
 
 function playSound(name) {
   if (!soundEnabled) return;
