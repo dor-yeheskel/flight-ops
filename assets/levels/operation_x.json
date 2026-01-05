@@ -1,6 +1,6 @@
 {
-    "displayName": "The Beach",
-    "start": {"lat": 32.48142820996033, "lng": 34.84459632052176, "heading": 100},
+    "displayName": "The Beach", 
+    "start": {"lat": 32.53429644245227, "lng": 34.823083387537636, "heading": 130},
     "targetLocations": [
       {"lat": 32.45011495458686, "lng": 34.910946325828284, "emoji": "🏭", "size": "small"},
       {"lat": 32.44635121161945, "lng": 34.912413576151316, "emoji": "🏭", "size": "small"},
