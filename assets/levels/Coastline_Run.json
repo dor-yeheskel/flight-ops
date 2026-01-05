@@ -1,33 +1,32 @@
 {
     "displayName": "Coastline Run",
     "limits": {
-      "maxBombs": 1,
+      "maxBombs": 8,
       "maxStealth": 0
     },
     "start": {
-      "lat": 32.83086752228586,
-      "lng": 35.03747445311739,
-      "heading": 0
+        "lat": 32.44970009060363,
+        "lng": 34.91198810132578,
+      "heading": 130
     },
-    "night": false,
     "targetLocations": [
-      {
-        "lat": 0,
-        "lng": 0,
+      {"lat": 32.44970009060363,
+        "lng": 34.91198810132578,
         "emoji": "🏭",
-        "size": "big" 
+        "size": "medium"
+      },
+      {
+        "lat": 32.4477902123251,
+        "lng": 34.91568307668275,
+        "emoji": "🏭",
+        "size": "small"
+      },
+      {
+        "lat": 32.44686998756953,
+        "lng": 34.9126792111725,
+        "emoji": "🏭",
+        "size": "small"
       }
     ],
-    "radarLocations": [
-      {
-        "lat": 0,
-        "lng": 0,
-        "size": "small",
-
-        "rocketSpeed": 500,
-        "rocketFreq": 0.7,
-        "smartRocketsEvery": 10,
-        "smartRocketSpeedFactor": 0.7
-      }
-    ]
+    "radarLocations": []
 }

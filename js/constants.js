@@ -10,7 +10,7 @@ const GAME_STATE = {
 const CONFIG_DEFAULTS = {
   baseRadius: 400, // meters
   minSpeed: 1900,
-  maxSpeed: 5000,
+  maxSpeed: 4500,  // 5000?
   accel: 2500,
   turnRate: 140,
   emojiRotationOffset: -45,

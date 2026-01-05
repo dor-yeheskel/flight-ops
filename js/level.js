@@ -122,7 +122,7 @@ function spawnBase() {
     })
   }).addTo(layerUi);
   // ===== DEBUG: BASE REFUEL RADIUS (TEMP) =====
-  const DEBUG_SHOW_BASE_RADIUS = true;
+  const DEBUG_SHOW_BASE_RADIUS = false;
 
   if (DEBUG_SHOW_BASE_RADIUS) {
     L.circle([state.base.lat, state.base.lng], {
@@ -185,7 +185,7 @@ function addTarget(target) {
 
 
   // ===== DEBUG: TARGET HIT RADIUS (TEMP) =====
-  const DEBUG_SHOW_TARGET_RADIUS = true;
+  const DEBUG_SHOW_TARGET_RADIUS = false;
 
   if (DEBUG_SHOW_TARGET_RADIUS) {
     L.circle([target.lat, target.lng], {
@@ -324,7 +324,7 @@ function addRadar(cfg) {
   }).addTo(layerRadars);
 
   // ===== DEBUG: RADAR HIT RADIUS (BOMB) =====
-  const DEBUG_SHOW_RADAR_HIT_RADIUS = true;
+  const DEBUG_SHOW_RADAR_HIT_RADIUS = false;
   let hitCircle = null;
 
   if (DEBUG_SHOW_RADAR_HIT_RADIUS) {
