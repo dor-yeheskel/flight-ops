@@ -2,6 +2,7 @@
 
 const map = L.map("map", { zoomControl: false, inertia: false });
 map.keyboard.disable();
+map.dragging.disable();
 
 const nightCanvas = document.getElementById("nightCanvas");
 const nightCtx = nightCanvas.getContext("2d");
