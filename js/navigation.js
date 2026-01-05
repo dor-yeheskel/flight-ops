@@ -55,6 +55,10 @@ window.addEventListener('DOMContentLoaded', async function() {
 
   muteBtn = document.getElementById("muteBtn");
   updateMuteUI();
+  muteBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    toggleMute();
+  });
 
   
   // Create plane marker now that map exists

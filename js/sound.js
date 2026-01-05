@@ -57,7 +57,7 @@ let muteBtn = null;
 
 function updateMuteUI() {
   if (!muteBtn) return;
-  muteBtn.textContent = soundEnabled ? "🔊 Sound" : "🔇 Muted";
+  muteBtn.textContent = soundEnabled ? "🔊" : "🔇";
 }
 
 function toggleMute() {

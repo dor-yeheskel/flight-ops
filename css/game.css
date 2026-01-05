@@ -135,6 +135,7 @@ html, body {
   top: 14px;
   right: 14px;
   opacity: 0.6;
+  z-index: 100001;
 }
 
 
