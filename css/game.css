@@ -683,3 +683,9 @@ body.night .fire-emoji {
   opacity: 0.35;
   filter: none;
 }
+
+.hud-item {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", "Apple Color Emoji",
+               "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
+}

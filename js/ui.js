@@ -90,7 +90,11 @@ function updateHUD() {
 function setHUDValue(id, value) {
   const el = document.getElementById(id);
   if (!el) return;
-
+  if (id === "hud-stealth" && value === 0) {
+    el.textContent = "—";
+    el.classList.remove("hud-zero");
+    return;
+  }
   el.textContent = value;
   el.style.color = "";
   if (id === "hud-targets" && value === 0) {
