@@ -690,3 +690,10 @@ body.night .fire-emoji {
                "Segoe UI", "Apple Color Emoji",
                "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
 }
+
+/* Disable pointer interaction on all map markers */
+.leaflet-marker-icon,
+.leaflet-interactive {
+  pointer-events: none !important;
+  cursor: default !important;
+}

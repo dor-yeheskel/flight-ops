@@ -1,9 +1,3 @@
 Next:
   * Missions: https://docs.google.com/document/d/1XEAaBC2EewAXH4tuR27LtHHdHiNKEPWIYdB_nU2scDM/edit?tab=t.0
   * Production: Try the GitHub pages (pinned chat) and after Edo feedback -> itch.
-
-==========================================================
-Remove my data: open console:
-  localStorage.clear();
-  sessionStorage.clear();
-  location.reload();
