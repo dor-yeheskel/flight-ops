@@ -8,31 +8,31 @@ const GAME_STATE = {
 /* ========= CONSTANTS (defaults preserved) ========= */
 
 const CONFIG_DEFAULTS = {
-  baseRadius: 800, // meters
-  minSpeed: 2500,
-  maxSpeed: 8000,
+  baseRadius: 400, // meters
+  minSpeed: 1900,
+  maxSpeed: 5000,
   accel: 2500,
   turnRate: 140,
   emojiRotationOffset: -45,
 
-  missileLifetime: 5.5,       // seconds
-  missileHitRadius: 200,    // meters
+  missileLifetime: 4.5,     // seconds
+  missileHitRadius: 85,    // meters
+
   missileRotationOffset: -45,
 
   lockBeepDistance: 5000,
   lockBeepCooldown: 0.7,
 
-  targetRadius: 800,       // meters
-  radarHitRadius: 800,     // meters
-
-  radarRangeOnMinimap: 8000
+  radarRangeOnMinimap: 4500,
 };
+
+const BASE_SIZE = 45;
 
 /* radar types (ranges doubled as in your current code) */
 const RADAR_TYPES = [
-  { size: "small",  range: 3500,  emoji: "📡", scale: 1 },
-  { size: "medium", range: 5000,  emoji: "📡", scale: 1.5 },
-  { size: "big",  range: 7500, emoji: "📡", scale: 2 }
+  { size: "small",  range: 1200,  emoji: "📡", scale: 1 },  //old 3500
+  { size: "medium", range: 2200,  emoji: "📡", scale: 1.5 }, // 5000
+  { size: "big",  range: 3200, emoji: "📡", scale: 2 } // 7500
 ];
 
 const SIZE_STATS = {
@@ -48,15 +48,15 @@ const FIRE_SCALE_BY_SIZE = {
 };
 
 const FIRE_X_OFFSET_PX = {
-  small:  10,
-  medium: 35,
-  big:    40
+  small:  6,
+  medium: 25,
+  big:    20
 };
 
 const FIRE_Y_OFFSET_PX = {
-  small:  20,
-  medium: 50,
-  big:    60
+  small:  10,
+  medium: 40,
+  big:    40
 };
 
 
@@ -74,3 +74,32 @@ const FIRE_SCALE_BY_HP_RATIO = [
   { min: 0.33, scale: 1.4 },  // medium fire
   { min: 0.0,  scale: 1.9 }   // heavy fire
 ];
+
+
+// ===== HIT RADIUS (BOMB DAMAGE) BY ENTITY SIZE =====
+
+const TARGET_HIT_RADIUS_BY_SIZE = {
+  small: 200,
+  medium: 290,
+  big: 370
+};
+
+const RADAR_HIT_RADIUS_BY_SIZE = {
+  small: 200,
+  medium: 290,
+  big: 370
+};
+
+function getTargetHitRadius(size) {
+  if (!TARGET_HIT_RADIUS_BY_SIZE[size]) {
+    throw new Error(`Unknown target size for hit radius: ${size}`);
+  }
+  return TARGET_HIT_RADIUS_BY_SIZE[size];
+}
+
+function getRadarHitRadius(size) {
+  if (!RADAR_HIT_RADIUS_BY_SIZE[size]) {
+    throw new Error(`Unknown radar size for hit radius: ${size}`);
+  }
+  return RADAR_HIT_RADIUS_BY_SIZE[size];
+}

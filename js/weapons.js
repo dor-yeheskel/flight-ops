@@ -57,7 +57,7 @@ function explodeBomb(bomb) {
   for (let i = entities.targets.length - 1; i >= 0; i--) {
     const t = entities.targets[i];
 
-    if (checkHit(t, CONFIG_DEFAULTS.targetRadius)) {
+    if (checkHit(t, getTargetHitRadius(t.size))) {
       layerTargets.removeLayer(t.marker);
       entities.targets.splice(i, 1);
       entities.remainingTargets = entities.targets.length;
@@ -74,7 +74,7 @@ function explodeBomb(bomb) {
     const r = entities.radars[i];
     if (!r.alive) continue;
 
-    if (checkHit(r, CONFIG_DEFAULTS.radarHitRadius)) {
+    if (checkHit(r, getRadarHitRadius(r.size))) {
       r.alive = false;
       state.destroyedRadars++;
       layerRadars.removeLayer(r.marker);

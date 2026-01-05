@@ -93,15 +93,49 @@ function spawnBase() {
     baseMarker = null;
   }
   if (!state.hasBase) return;
-
+  const rot = state.base.rotation ?? 0;
   baseMarker = L.marker([state.base.lat, state.base.lng], {
-    icon: L.divIcon({
-      html: "🔧",
-      className: "base",
-      iconSize: [32, 32],
-      iconAnchor: [16, 16]
+  icon: L.divIcon({
+      html: `
+        <div style="
+          width:${BASE_SIZE}px;
+          height:${BASE_SIZE}px;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          transform: translate(-50%, -50%);
+          pointer-events:none;
+        ">
+        <div style="
+          font-size:${BASE_SIZE}px;
+          line-height:1;
+          transform: rotate(${rot}deg);
+          transform-origin: 50% 50%;
+        ">
+          🛬
+        </div>
+        </div>
+      `,
+      className: "",
+      iconSize: [0, 0],
+      iconAnchor: [0, 0]
     })
   }).addTo(layerUi);
+  // ===== DEBUG: BASE REFUEL RADIUS (TEMP) =====
+  const DEBUG_SHOW_BASE_RADIUS = true;
+
+  if (DEBUG_SHOW_BASE_RADIUS) {
+    L.circle([state.base.lat, state.base.lng], {
+      radius: state.baseRadius,
+      color: "cyan",
+      weight: 1,
+      fill: false,
+      dashArray: "4 8",
+      interactive: false
+    }).addTo(layerUi);
+  }
+  // ===== END DEBUG =====
+
 }
 
 
@@ -123,17 +157,47 @@ function spawnTargetsForLevel(levelId) {
 
 function addTarget(target) {
   const size = target.size || "small";
-  const stats = SIZE_STATS[size || "medium"] || SIZE_STATS.medium;
+  const stats = SIZE_STATS[size] || SIZE_STATS.medium;
+
+  const visualSize = Math.round(32 * stats.scale);
 
   const marker = L.marker([target.lat, target.lng], {
     icon: L.divIcon({
-      html: `<div style="font-size:${32 * stats.scale}px">${target.emoji || "🏭"}</div>`,
+      html: `
+        <div style="
+          width:${visualSize}px;
+          height:${visualSize}px;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          transform: translate(-50%, -50%);
+        ">
+          <div style="font-size:${visualSize}px; line-height:1;">
+            ${target.emoji || "🏭"}
+          </div>
+        </div>
+      `,
       className: "",
-      iconSize: [60, 60],
-      iconAnchor: [30, 30]
+      iconSize: [0, 0],
+      iconAnchor: [0, 0]
     })
   }).addTo(layerTargets);
 
+
+  // ===== DEBUG: TARGET HIT RADIUS (TEMP) =====
+  const DEBUG_SHOW_TARGET_RADIUS = true;
+
+  if (DEBUG_SHOW_TARGET_RADIUS) {
+    L.circle([target.lat, target.lng], {
+      radius: getTargetHitRadius(size), // actual hit radius (by size)
+      color: "red",
+      weight: 1,
+      fill: false,
+      dashArray: "6 6",
+      interactive: false
+    }).addTo(layerUi);
+  }
+  // ===== END DEBUG =====
   entities.targets.push({
     ...target,
     hp: stats.hp,
@@ -224,20 +288,56 @@ function applyDamage(entity, dmg) {
 function addRadar(cfg) {
   const type = radarSizeToType(cfg.size);
   const stats = SIZE_STATS[cfg.size || "medium"] || SIZE_STATS.medium;
+  const visualSize = Math.round(36 * stats.scale);
 
   const marker = L.marker([cfg.lat, cfg.lng], {
     icon: L.divIcon({
-      html: `<div style="font-size:${40 * type.scale}px">📡</div>`,
-      iconSize: [60, 60],
-      iconAnchor: [30, 30]
+      html: `
+        <div style="
+          width:${visualSize}px;
+          height:${visualSize}px;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          transform: translate(-50%, -50%);
+          pointer-events:none;
+        ">
+          <div style="
+            font-size:${visualSize}px;
+            line-height:1;
+          ">
+            📡
+          </div>
+        </div>
+      `,
+      className: "",
+      iconSize: [0, 0],
+      iconAnchor: [0, 0]
     })
   }).addTo(layerRadars);
+
 
   const circle = L.circle([cfg.lat, cfg.lng], {
     radius: type.range,
     color: "red",
     fillOpacity: 0.05
   }).addTo(layerRadars);
+
+  // ===== DEBUG: RADAR HIT RADIUS (BOMB) =====
+  const DEBUG_SHOW_RADAR_HIT_RADIUS = true;
+  let hitCircle = null;
+
+  if (DEBUG_SHOW_RADAR_HIT_RADIUS) {
+    hitCircle = L.circle([cfg.lat, cfg.lng], {
+      radius: getRadarHitRadius(cfg.size), // bomb hit radius (by size)
+      color: "white",
+      weight: 1,
+      fill: false,
+      dashArray: "6 6",
+      interactive: false
+    }).addTo(layerRadars);
+  }
+
 
   entities.radars.push({
     lat: cfg.lat,
