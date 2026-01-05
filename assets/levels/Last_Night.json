@@ -1,0 +1,33 @@
+{
+    "displayName": "Last Night",
+    "limits": {
+      "maxBombs": 1,
+      "maxStealth": 0
+    },
+    "start": {
+      "lat": 0,
+      "lng": 0,
+      "heading": 0
+    },
+    "night": false,
+    "targetLocations": [
+      {
+        "lat": 0,
+        "lng": 0,
+        "emoji": "🏭",
+        "size": "big" 
+      }
+    ],
+    "radarLocations": [
+      {
+        "lat": 0,
+        "lng": 0,
+        "size": "small",
+
+        "rocketSpeed": 500,
+        "rocketFreq": 0.7,
+        "smartRocketsEvery": 10,
+        "smartRocketSpeedFactor": 0.7
+      }
+    ]
+}

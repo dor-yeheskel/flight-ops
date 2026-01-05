@@ -1,7 +1,12 @@
 {
   "levels": [
-    "operation_x",
-    "operation_y",
-    "operation_z"
+    "Coastline_Run",
+    "Desert_Core",
+    "Green_Crossfire",
+    "Black_Islands",
+    "No_Way_Out",
+    "City_Under_Lock",
+    "Frozen_Reach",
+    "Last_Night"
   ]
 }
