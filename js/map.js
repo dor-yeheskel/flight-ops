@@ -25,8 +25,9 @@ L.tileLayer(
 )
 
 
-map.setMinZoom(14);
-map.setMaxZoom(14);
+let zoom = 15;
+map.setMinZoom(zoom);
+map.setMaxZoom(zoom);
 map.createPane("planePane");
 map.getPane("planePane").style.zIndex = 7001;
 map.createPane("fxPane");
