@@ -15,6 +15,7 @@ window.addEventListener("keydown", e => {
   const code = normCode(e);
   const isEnter = (code === "Enter" || code === "NumpadEnter");
   if (e.code === "KeyP") {
+    if (e.key === "MediaTrackNext") return;
     togglePause();
     return;
   }
