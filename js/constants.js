@@ -15,7 +15,7 @@ const CONFIG_DEFAULTS = {
   turnRate: 140,
   emojiRotationOffset: -45,
 
-  missileLifetime: 4.5,     // seconds
+  missileLifetime: 3,     // seconds
   missileHitRadius: 85,    // meters
 
   missileRotationOffset: -45,
