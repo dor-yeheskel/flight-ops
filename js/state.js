@@ -40,7 +40,7 @@ const state = {
   destroyedRadars: 0,
 
   // missiles config (defaults preserved unless overridden by level)
-  rocketSpeed: 28000, // km/h
+  rocketSpeed: 5000, // km/h
   rocketFreq: 1.0,    // seconds
   smartRocketsEvery: 5, // 0 disables
   smartRocketSpeedFactor: 0.5,

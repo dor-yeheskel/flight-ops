@@ -66,7 +66,7 @@ function applyLevelConfig(levelId) {
 
   // defaults preserved if not overridden
   const rockets = lvl.rocketsConfig || {};
-  state.rocketSpeed = (rockets.rocketSpeed ?? 28000);
+  state.rocketSpeed = (rockets.rocketSpeed ?? 5000);
   state.rocketFreq = (rockets.rocketFreq ?? 1.0);
   state.smartRocketsEvery = (rockets.smartRocketsEvery ?? 5);
   state.smartRocketSpeedFactor = (rockets.smartRocketSpeedFactor ?? 0.5);
@@ -358,7 +358,7 @@ function addRadar(cfg) {
     smartRocketSpeedFactor:
       cfg.smartRocketSpeedFactor ?? state.smartRocketSpeedFactor,
 
-    cooldown: 0
+    cooldown: cfg.rocketFreq ?? state.rocketFreq
   });
 }
 

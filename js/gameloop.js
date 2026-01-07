@@ -127,7 +127,8 @@ function loop(t) {
       // --- FIRING:
       if (!state.stealthActive && d < r.range && r.cooldown <= 0) {
         launchMissile(r);
-        r.cooldown = Math.max(0.1, state.rocketFreq);
+        r.cooldown = Math.max(0.1, r.rocketFreq);
+        continue; 
       }
 
       // --- cooldown stealth ---
