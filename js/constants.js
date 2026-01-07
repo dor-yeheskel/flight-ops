@@ -79,7 +79,7 @@ const FIRE_SCALE_BY_HP_RATIO = [
 // ===== HIT RADIUS (BOMB DAMAGE) BY ENTITY SIZE =====
 
 const TARGET_HIT_RADIUS_BY_SIZE = {
-  small: 200,
+  small: 250,
   medium: 290,
   big: 370
 };
