@@ -30,9 +30,9 @@ const BASE_SIZE = 45;
 
 /* radar types (ranges doubled as in your current code) */
 const RADAR_TYPES = [
-  { size: "small",  range: 1200,  emoji: "📡", scale: 1 },  //old 3500
-  { size: "medium", range: 2600,  emoji: "📡", scale: 1.5 }, // 5000
-  { size: "big",  range: 3200, emoji: "📡", scale: 2 } // 7500
+  { size: "small",  range: 1300,  emoji: "📡", scale: 1 },  //old 3500
+  { size: "medium", range: 3400,  emoji: "📡", scale: 1.5 }, // 5000
+  { size: "big",  range: 6000, emoji: "📡", scale: 2 } // 7500
 ];
 
 const SIZE_STATS = {

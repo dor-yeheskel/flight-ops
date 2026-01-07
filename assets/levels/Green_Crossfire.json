@@ -1,33 +1,65 @@
 {
     "displayName": "Green Crossfire",
     "limits": {
-      "maxBombs": 1,
-      "maxStealth": 0
+      "maxBombs": 15,
+      "maxStealth": 2
     },
     "start": {
-      "lat": 0,
-      "lng": 0,
-      "heading": 0
+      "lat": -3.365284646530482,
+      "lng": -69.44158116181526,
+      "heading": 90
     },
     "night": false,
     "targetLocations": [
       {
-        "lat": 0,
-        "lng": 0,
-        "emoji": "🏭",
-        "size": "big" 
+        "lat": -3.399,
+        "lng": -69.24690363552821,
+        "emoji": "🏗️",
+        "size": "medium" 
+      },
+      {
+        "lat": -3.5012196901344734,
+        "lng": -69.06609490964573,
+        "emoji": "🏗️",
+        "size": "medium" 
+      },
+      {
+        "lat":  -3.5044151464524322,
+        "lng": -69.1007125487921,
+        "emoji": "🏗️",
+        "size": "medium" 
       }
     ],
     "radarLocations": [
       {
-        "lat": 0,
-        "lng": 0,
-        "size": "small",
+        "lat": -3.4163708906970123,
+        "lng": -69.19110547485838,
+        "size": "medium",
 
-        "rocketSpeed": 500,
-        "rocketFreq": 0.7,
-        "smartRocketsEvery": 10,
-        "smartRocketSpeedFactor": 0.7
+        "rocketSpeed": 6000,
+        "rocketFreq": 0.8,
+        "smartRocketsEvery": 0,
+        "smartRocketSpeedFactor": 0
+      },
+      {
+        "lat": -3.497604177734923,
+        "lng": -69.06,
+        "size": "medium",
+
+        "rocketSpeed": 6000,
+        "rocketFreq": 0.8,
+        "smartRocketsEvery": 0,
+        "smartRocketSpeedFactor": 0
+      },
+      { 
+        "lat": -3.4900023994586173,
+        "lng": -69.0545517840234,
+        "size": "big",
+
+        "rocketSpeed": 9000,
+        "rocketFreq": 2,
+        "smartRocketsEvery": 0,
+        "smartRocketSpeedFactor": 0
       }
     ]
 }
