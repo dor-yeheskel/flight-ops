@@ -1,33 +1,77 @@
 {
     "displayName": "Desert Core",
     "limits": {
-      "maxBombs": 1,
-      "maxStealth": 0
+      "maxBombs": 15,
+      "maxStealth": 1
     },
     "start": {
-      "lat": 0,
-      "lng": 0,
-      "heading": 0
+      "lat": -25.946451098390078,
+      "lng": 15.953251493421968,
+      "heading": 90
     },
     "night": false,
     "targetLocations": [
-      {
-        "lat": 0,
-        "lng": 0,
+      { 
+        "lat": -25.943262062694625,
+        "lng": 16.371626365574592,
+        "emoji": "☣️",
+        "size": "medium"
+      },
+      { 
+        "lat": -25.924347880709185,
+        "lng": 16.41711780309067,
         "emoji": "🏭",
-        "size": "big" 
+        "size": "small"
+      },
+      { 
+        "lat": -25.90745172419943,
+        "lng": 16.424802282846624,
+        "emoji": "🏭",
+        "size": "small"
+      },
+      {
+        "lat": -25.973197849139293,
+        "lng": 16.389299030606175,
+        "emoji": "🏭",
+        "size": "small"
+      },
+      {
+        "lat": -25.990905101654334,
+        "lng": 16.361195674798036,
+        "emoji": "🏭",
+        "size": "small"
       }
     ],
     "radarLocations": [
       {
-        "lat": 0,
-        "lng": 0,
+        "lat": -25.93117715367723,
+        "lng": 16.0623138325387,
         "size": "small",
 
-        "rocketSpeed": 500,
-        "rocketFreq": 0.7,
-        "smartRocketsEvery": 10,
-        "smartRocketSpeedFactor": 0.7
+        "rocketSpeed": 5000,
+        "rocketFreq": 2.5,
+        "smartRocketsEvery": 0,
+        "smartRocketSpeedFactor": 0
+      },
+      {
+        "lat": -25.96102198746112,
+        "lng": 16.20220456739442,
+        "size": "medium",
+
+        "rocketSpeed": 5000,
+        "rocketFreq": 2.5,
+        "smartRocketsEvery": 0,
+        "smartRocketSpeedFactor": 0
+      },
+      {
+        "lat": -25.942998140269367,
+        "lng": 16.36400355742877,
+        "size": "medium",
+
+        "rocketSpeed": 5000,
+        "rocketFreq": 2.5,
+        "smartRocketsEvery": 0,
+        "smartRocketSpeedFactor": 0
       }
     ]
 }
