@@ -44,6 +44,7 @@ window.addEventListener("keydown", e => {
   }
 
   if (code === "Escape") {
+    stopAllSounds();
     goToMenu();
     return;
   }

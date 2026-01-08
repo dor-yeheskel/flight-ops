@@ -165,11 +165,10 @@ function loop(t) {
 
         if (!state.gameOver) {
           state.gameOver = true;
-
           playSound("defeat");
           endScreenTimeout = setTimeout(() => {
             gameOverHandler();
-          }, 900);
+          }, 800);
         }
 
         break;

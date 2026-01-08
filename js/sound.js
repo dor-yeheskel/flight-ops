@@ -16,11 +16,11 @@ const sounds = {
 };
 
 const V = {
-  ui: 0.45,
+  ui: 0.55,
   fx: 0.65,
   impact: 0.75,
   state: 0.5,
-  end: 0.65,
+  end: 0.85,
 };
 
 sounds.key_arrow.volume = V.ui;
@@ -80,5 +80,56 @@ function togglePause() {
   if (overlay) {
     overlay.innerHTML = "⏸ PAUSED";
     overlay.style.display = state.paused ? "flex" : "none";
+  }
+}
+
+function stopAllSounds({ fade = false, duration = 1200 } = {}) {
+  const now = performance.now();
+
+  for (const s of Object.values(sounds)) {
+
+    // ensure base volume
+    if (typeof s._baseVolume !== "number" || !isFinite(s._baseVolume)) {
+      s._baseVolume = isFinite(s.volume) ? s.volume : 1;
+    }
+
+    // not playing → just reset
+    if (s.paused || s.ended || s.currentTime === 0) {
+      s.pause();
+      s.currentTime = 0;
+      s.volume = s._baseVolume;
+      s._fading = false;
+      continue;
+    }
+
+    if (!fade) {
+      s.pause();
+      s.currentTime = 0;
+      s.volume = s._baseVolume;
+      s._fading = false;
+      continue;
+    }
+
+    if (s._fading) continue;
+    s._fading = true;
+
+    const start = now;
+    const base = s._baseVolume;
+
+    function step(t) {
+      const p = Math.min(1, (t - start) / duration);
+      s.volume = base * (1 - p);
+
+      if (p < 1) {
+        requestAnimationFrame(step);
+      } else {
+        s.pause();
+        s.currentTime = 0;
+        s.volume = base;
+        s._fading = false;
+      }
+    }
+
+    requestAnimationFrame(step);
   }
 }
