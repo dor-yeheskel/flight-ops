@@ -1,10 +1,11 @@
 {
-    "displayName": "(Test)",
+    "displayName": "(Test Night)",
     "start": {
       "lat": 31.5195,
       "lng": 34.3888,
       "heading": 90
     },
+    "night": true,
     "base": {
       "lat": 31.5195,
       "lng": 34.3198,
