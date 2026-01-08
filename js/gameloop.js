@@ -43,8 +43,7 @@ function loop(t) {
   ) {
     victoryHandler();
   }
-
-  if (isNight && (state.gameStarted || nightBursts.length > 0 || activeFires.length > 0)) {
+  if (state.gameStarted && !state.gameOver) {
     if (isNight) {
       drawNight();
     }
@@ -162,7 +161,9 @@ function loop(t) {
 
       if (d < CONFIG_DEFAULTS.missileHitRadius) {
         explosionEffect(m.lat, m.lng);
-
+        if (isNight) {
+          drawNight();
+        }
         if (!state.gameOver) {
           state.gameOver = true;
           playSound("defeat");
