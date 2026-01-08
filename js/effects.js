@@ -65,8 +65,8 @@ function explosionEffect(lat, lng) {
   if (levelToData[state.levelId]?.night) {
     const p = map.latLngToContainerPoint([lat, lng]);
     nightBursts.push({
-      x: p.x,
-      y: p.y,
+      lat,
+      lng,
       t: performance.now()
     });
   }

@@ -202,12 +202,16 @@ function drawRadar() {
 
 
 function drawNight() {
+  const ctx = nightCtx;
+
+  // SAFETY
+  ctx.globalCompositeOperation = "source-over";
+
   if (!isNight) {
     nightCtx.clearRect(0, 0, nightCanvas.width, nightCanvas.height);
     return;
   }
 
-  const ctx = nightCtx;
   ctx.clearRect(0, 0, nightCanvas.width, nightCanvas.height);
 
   ctx.fillStyle = "rgba(0,0,0,0.89)";
@@ -254,12 +258,12 @@ function drawNight() {
     }
 
     const r = 220 + age * 180;
+    const p = map.latLngToContainerPoint([b.lat, b.lng]);
 
     const grad = ctx.createRadialGradient(
-      b.x, b.y, 0,
-      b.x, b.y, r
+      p.x, p.y, 0,
+      p.x, p.y, r
     );
-
     grad.addColorStop(0, `rgba(255,200,120,${0.7 * (1 - age)})`);
     grad.addColorStop(0.5, `rgba(255,140,0,${0.35 * (1 - age)})`);
 
@@ -268,7 +272,7 @@ function drawNight() {
     ctx.globalCompositeOperation = "destination-out";
     ctx.fillStyle = grad;
     ctx.beginPath();
-    ctx.arc(b.x, b.y, r, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
     ctx.fill();
   }  
   // 🔥 Fire glow (persistent, world-locked)

@@ -44,7 +44,7 @@ function loop(t) {
     victoryHandler();
   }
 
-  if (state.gameStarted && !state.gameOver) {
+  if (isNight && (state.gameStarted || nightBursts.length > 0 || activeFires.length > 0)) {
     if (isNight) {
       drawNight();
     }
