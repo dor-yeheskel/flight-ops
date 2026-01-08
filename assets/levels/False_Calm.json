@@ -78,7 +78,7 @@
         "size": "big",
 
         "rocketSpeed": 12000,
-        "rocketFreq": 1.5,
+        "rocketFreq": 1.2,
         "smartRocketsEvery": 0,
         "smartRocketSpeedFactor": 0
       }

@@ -5,8 +5,8 @@
       "maxStealth": 1
     },
     "start": {
-      "lat": 37.62123603869874,
-      "lng": -122.37133823844326,
+      "lat": 100,
+      "lng": 100,
       "heading": 27
     },
     "night": true,
