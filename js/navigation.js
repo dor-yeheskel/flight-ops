@@ -56,8 +56,10 @@ window.addEventListener('DOMContentLoaded', async function() {
   muteBtn = document.getElementById("muteBtn");
   updateMuteUI();
   muteBtn.addEventListener("click", e => {
+    e.preventDefault();
     e.stopPropagation();
     toggleMute();
+    muteBtn.blur();
   });
 
   
