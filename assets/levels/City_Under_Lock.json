@@ -1,8 +1,8 @@
 {
     "displayName": "City Under Lock",
     "limits": {
-      "maxBombs": 110,
-      "maxStealth": 3
+      "maxBombs": 1,
+      "maxStealth": 1
     },
     "start": {
       "lat": 37.62123603869874,
@@ -20,50 +20,20 @@
       {
         "lat": 37.828054466335575,
         "lng": -122.42283877640676,
-        "emoji": "🏗️",
+        "emoji": "🏢",
         "size": "big" 
       }
     ],
     "radarLocations": [
       {
-        "lat": 37.82697964632378,
-        "lng": -122.37658920270663,
+        "lat": 37.79996678994023,
+        "lng": -122.45843632041787,
         "size": "big",
 
-        "rocketSpeed": 500,
-        "rocketFreq": 0.7,
-        "smartRocketsEvery": 10,
-        "smartRocketSpeedFactor": 0.7
-      },
-      {
-        "lat": 37.83542410651947,
-        "lng": -122.4737753440343,
-        "size": "big",
-
-        "rocketSpeed": 500,
-        "rocketFreq": 0.7,
-        "smartRocketsEvery": 10,
-        "smartRocketSpeedFactor": 0.7
-      },
-      {
-        "lat": 37.80673657736375,
-        "lng": -122.42816117979564,
-        "size": "big",
-
-        "rocketSpeed": 500,
-        "rocketFreq": 0.7,
-        "smartRocketsEvery": 10,
-        "smartRocketSpeedFactor": 0.7
-      },
-      {
-        "lat": 37.857252816670595,
-        "lng": -122.43342102326116,
-        "size": "big",
-
-        "rocketSpeed": 500,
-        "rocketFreq": 0.7,
-        "smartRocketsEvery": 10,
-        "smartRocketSpeedFactor": 0.7
+        "rocketSpeed": 8000,
+        "rocketFreq": 0.6,
+        "smartRocketsEvery": 0,
+        "smartRocketSpeedFactor": 0
       }
     ]
 }
