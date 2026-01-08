@@ -31,7 +31,7 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.6,
+        "rocketFreq": 0.5,
         "smartRocketsEvery": 0,
         "smartRocketSpeedFactor": 0
       },
@@ -41,7 +41,7 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.6,
+        "rocketFreq": 0.5,
         "smartRocketsEvery": 0,
         "smartRocketSpeedFactor": 0
       },
@@ -51,7 +51,7 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.6,
+        "rocketFreq": 0.5,
         "smartRocketsEvery": 0,
         "smartRocketSpeedFactor": 0
       },
@@ -61,7 +61,7 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.6,
+        "rocketFreq": 0.5,
         "smartRocketsEvery": 0,
         "smartRocketSpeedFactor": 0
       }

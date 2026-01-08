@@ -57,10 +57,10 @@
         "lng": -75.95683471049304,
         "size": "medium",
 
-        "rocketSpeed": 9000,
+        "rocketSpeed": 10000,
         "rocketFreq": 2,
         "smartRocketsEvery": 3,
-        "smartRocketSpeedFactor": 0.5
+        "smartRocketSpeedFactor": 0.44
       },
       { 
         "lat": 23.57863696199861,
@@ -68,7 +68,7 @@
         "size": "medium",
 
         "rocketSpeed": 7000,
-        "rocketFreq": 1,
+        "rocketFreq": 0.5,
         "smartRocketsEvery": 0,
         "smartRocketSpeedFactor": 0
       },
@@ -78,7 +78,7 @@
         "size": "big",
 
         "rocketSpeed": 12000,
-        "rocketFreq": 2,
+        "rocketFreq": 1.5,
         "smartRocketsEvery": 0,
         "smartRocketSpeedFactor": 0
       }

@@ -48,7 +48,7 @@
         "lng": 16.0623138325387,
         "size": "small",
 
-        "rocketSpeed": 5000,
+        "rocketSpeed": 7000,
         "rocketFreq": 2,
         "smartRocketsEvery": 0,
         "smartRocketSpeedFactor": 0
@@ -58,7 +58,7 @@
         "lng": 16.20220456739442,
         "size": "medium",
 
-        "rocketSpeed": 5000,
+        "rocketSpeed": 7000,
         "rocketFreq": 2,
         "smartRocketsEvery": 0,
         "smartRocketSpeedFactor": 0
@@ -68,7 +68,7 @@
         "lng": 16.36400355742877,
         "size": "medium",
 
-        "rocketSpeed": 5000,
+        "rocketSpeed": 7000,
         "rocketFreq": 2,
         "smartRocketsEvery": 0,
         "smartRocketSpeedFactor": 0
