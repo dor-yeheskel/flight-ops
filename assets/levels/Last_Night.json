@@ -64,6 +64,16 @@
         "rocketFreq": 0.6,
         "smartRocketsEvery": 4,
         "smartRocketSpeedFactor": 0.44
+      },
+      {
+        "lat": 37.82609,
+        "lng": -122.421,
+        "size": "small",
+
+        "rocketSpeed": 6000,
+        "rocketFreq": 1,
+        "smartRocketsEvery": 0,
+        "smartRocketSpeedFactor": 0
       }
     ]
 }
