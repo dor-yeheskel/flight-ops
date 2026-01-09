@@ -29,9 +29,9 @@ function renderProgressTable() {
         <div class="${data?.rank?.includes('Gold') ? 'rank-gold' : ''}">
           ${!unlocked ? "🔒" : (data ? data.rank : "—")}
         </div>
-        <div>
-          ${!unlocked ? "🔒" : (data ? data.score : "—")}
-        </div>
+          <div class="${data?.score === 1000 ? 'score-max' : ''}">
+            ${!unlocked ? "🔒" : (data ? data.score : "—")}
+          </div>
       </div>
     `;
   }

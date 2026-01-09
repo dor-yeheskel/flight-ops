@@ -192,6 +192,13 @@ function victoryHandler() {
     animateNumber(finalEl, 0, score, 900);
   }, 1700);
 
+  const isPerfect = score === 1000;
+  setTimeout(() => {
+    if (isPerfect) {
+      finalEl.classList.add("score-perfect");
+    }
+  }, 1700 + 900);
+  
   setTimeout(() => {
     rankEl.style.display = "block";
     rankEl.style.opacity = "1";

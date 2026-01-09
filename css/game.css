@@ -697,3 +697,32 @@ body.night .fire-emoji {
   pointer-events: none !important;
   cursor: default !important;
 }
+
+.score-max {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 0 2px rgba(255,255,255,0.35);
+}
+
+.score-perfect {
+  color: #fff;
+  font-weight: 800;
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.35),
+    0 0 14px rgba(255,255,255,0.15);
+}
+
+.score-perfect {
+  animation: perfect-pop 600ms ease-out;
+}
+
+@keyframes perfect-pop {
+  from {
+    transform: scale(0.96);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
