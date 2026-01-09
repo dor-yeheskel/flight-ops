@@ -42,9 +42,11 @@ const state = {
   // missiles config (defaults preserved unless overridden by level)
   rocketSpeed: 5000, // km/h
   rocketFreq: 1.0,    // seconds
-  smartRocketsEvery: 5, // 0 disables
+  predictRocketsEvery: 0,        // 0 disables
+  predictRocketsLead: 1,
+  smartRocketsEvery: 0, // 0 disables
   smartRocketSpeedFactor: 0.5,
-
+  
   // bookkeeping
   levelId: null,
   levelIndex: 0,

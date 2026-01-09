@@ -92,26 +92,66 @@ function explodeBomb(bomb) {
 /* ========= MISSILES ========= */
 
 function launchMissile(radar) {
-  state.missileCounter++;
   playSound("rocket_launch");
+  state.missileCounter++;
+  let isSmart = false;
+  let isPredict = false;
+  if (
+    radar.smartRocketsEvery > 0 &&
+    radar.predictRocketsEvery > 0 &&
+    radar.smartRocketsEvery === radar.predictRocketsEvery
+  ) {
+    console.warn(
+      "[missiles] smart & predict cadence collision - defaulting to smart"
+    );
+  }
+  // SMART – priority 1
+  if (
+    radar.smartRocketsEvery > 0 &&
+    state.missileCounter % radar.smartRocketsEvery === 0
+  ) {
+    isSmart = true;
+  }
+  // PREDICT – only if not smart
+  else if (
+    radar.predictRocketsEvery > 0 &&
+    state.missileCounter % radar.predictRocketsEvery === 0
+  ) {
+    isPredict = true;
+  }
 
-  const smartEnabled =
-    radar.smartRocketsEvery &&
-    radar.smartRocketsEvery > 0;
+  let heading;
+  let speed = radar.rocketSpeed;
 
-  const isSmart = smartEnabled
-    ? (state.missileCounter % radar.smartRocketsEvery === 0)
-    : false;
+  // SMART – untouched
+  if (isSmart) {
+    heading = bearing(radar.lat, radar.lng, state.lat, state.lng);
+    speed *= radar.smartRocketSpeedFactor;
+  }
+  // PREDICT – NEW (one-time lead)
+  else if (isPredict) {
+    const leadDist =
+      (state.speed / 3.6) * radar.predictRocketsLead;
 
-  const speed = isSmart
-    ? radar.rocketSpeed * radar.smartRocketSpeedFactor
-    : radar.rocketSpeed;
+    const predicted = move(
+      state.lat,
+      state.lng,
+      state.heading,
+      leadDist
+    );
+
+    heading = bearing(radar.lat, radar.lng, predicted.lat, predicted.lng);
+  }
+  // DUMB
+  else {
+    heading = bearing(radar.lat, radar.lng, state.lat, state.lng);
+  }
 
   const missile = {
     lat: radar.lat,
     lng: radar.lng,
-    heading: bearing(radar.lat, radar.lng, state.lat, state.lng),
-    smart: isSmart,
+    heading,
+    smart: isSmart,   // ⚠️ predict ≠ smart
     speed,
     life: CONFIG_DEFAULTS.missileLifetime,
     lockBeeped: false,

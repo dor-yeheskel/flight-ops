@@ -68,9 +68,10 @@ function applyLevelConfig(levelId) {
   const rockets = lvl.rocketsConfig || {};
   state.rocketSpeed = (rockets.rocketSpeed ?? 5000);
   state.rocketFreq = (rockets.rocketFreq ?? 1.0);
-  state.smartRocketsEvery = (rockets.smartRocketsEvery ?? 5);
-  state.smartRocketSpeedFactor = (rockets.smartRocketSpeedFactor ?? 0.5);
-
+  state.smartRocketsEvery = (rockets.smartRocketsEvery ?? 0);
+  state.smartRocketSpeedFactor = (rockets.smartRocketSpeedFactor ?? 0.45);
+  state.predictRocketsEvery = (rockets.predictRocketsEvery ?? 0);
+  state.predictRocketsLead  = (rockets.predictRocketsLead  ?? 1);
 
   state.lat = start.lat;
   state.lng = start.lng;
@@ -224,7 +225,9 @@ function spawnRadarsForLevel(levelId) {
         rocketSpeed: r.rocketSpeed,
         rocketFreq: r.rocketFreq,
         smartRocketsEvery: r.smartRocketsEvery,
-        smartRocketSpeedFactor: r.smartRocketSpeedFactor
+        smartRocketSpeedFactor: r.smartRocketSpeedFactor,
+        predictRocketsEvery: r.predictRocketsEvery,
+        predictRocketsLead: r.predictRocketsLead
       });
     return;
   }
@@ -355,8 +358,9 @@ function addRadar(cfg) {
     rocketSpeed: cfg.rocketSpeed ?? state.rocketSpeed,
     rocketFreq: cfg.rocketFreq ?? state.rocketFreq,
     smartRocketsEvery: cfg.smartRocketsEvery ?? state.smartRocketsEvery,
-    smartRocketSpeedFactor:
-      cfg.smartRocketSpeedFactor ?? state.smartRocketSpeedFactor,
+    smartRocketSpeedFactor: cfg.smartRocketSpeedFactor ?? state.smartRocketSpeedFactor,
+    predictRocketsEvery: cfg.predictRocketsEvery ?? state.predictRocketsEvery,
+    predictRocketsLead:  cfg.predictRocketsLead  ?? state.predictRocketsLead,
 
     cooldown: cfg.rocketFreq ?? state.rocketFreq
   });
