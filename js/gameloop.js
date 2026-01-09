@@ -1,4 +1,10 @@
 /* ========= GAME LOOP (logic preserved) ========= */
+// ===== DEBUG =====
+const DEBUG_COORDS = false;
+const DEBUG_COORDS_INTERVAL = 0.5; // seconds
+let _debugCoordsTimer = 0;
+// =================
+
 
 let last = performance.now();
 
@@ -59,7 +65,15 @@ function loop(t) {
     const pos = move(state.lat, state.lng, state.heading, (state.speed / 3.6) * dt);
     state.lat = pos.lat;
     state.lng = pos.lng;
-
+    if (DEBUG_COORDS) {
+      _debugCoordsTimer += dt;
+      if (_debugCoordsTimer >= DEBUG_COORDS_INTERVAL) {
+        _debugCoordsTimer = 0;
+        console.log(
+          `[PLANE] lat=${state.lat.toFixed(6)}, lng=${state.lng.toFixed(6)}, heading=${state.heading.toFixed(1)}`
+        );
+      }
+    }
     planeMarker.setLatLng(pos);
     map.setView(pos, map.getZoom(), { animate: false });
 
