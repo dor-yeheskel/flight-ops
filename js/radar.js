@@ -238,7 +238,7 @@ function drawNight() {
 
   ctx.beginPath();
   ctx.moveTo(0, 0);
-  ctx.arc(0, 0, 320, -0.45, 0.45);
+  ctx.arc(0, 0, 350, -0.45, 0.45);
   //ctx.arc(0, 0, 420, -0.65, 0.65);
 
   ctx.closePath();
