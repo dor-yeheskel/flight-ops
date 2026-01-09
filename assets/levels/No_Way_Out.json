@@ -31,9 +31,7 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.5,
-        "smartRocketsEvery": 0,
-        "smartRocketSpeedFactor": 0
+        "rocketFreq": 0.5
       },
       {
         "lat": 37.83615699386319,
@@ -41,9 +39,7 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.5,
-        "smartRocketsEvery": 0,
-        "smartRocketSpeedFactor": 0
+        "rocketFreq": 0.5
       },
       {
         "lat": 37.857034036471994,
@@ -51,9 +47,7 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.5,
-        "smartRocketsEvery": 0,
-        "smartRocketSpeedFactor": 0
+        "rocketFreq": 0.5
       },
       {
         "lat": 37.79996678994023,
@@ -61,9 +55,7 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.5,
-        "smartRocketsEvery": 0,
-        "smartRocketSpeedFactor": 0
+        "rocketFreq": 0.5
       }
     ]
 }
