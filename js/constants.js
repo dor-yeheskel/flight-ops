@@ -85,7 +85,7 @@ const TARGET_HIT_RADIUS_BY_SIZE = {
 };
 
 const RADAR_HIT_RADIUS_BY_SIZE = {
-  small: 200,
+  small: 250,
   medium: 290,
   big: 370
 };
