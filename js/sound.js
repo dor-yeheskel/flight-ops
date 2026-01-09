@@ -16,8 +16,8 @@ const sounds = {
 };
 
 const V = {
-  ui: 0.85,
-  ui_clicked: 0.65,
+  ui: 0.95,
+  ui_clicked: 0.55,
   fx: 0.65,
   impact: 0.75,
   state: 0.5,
