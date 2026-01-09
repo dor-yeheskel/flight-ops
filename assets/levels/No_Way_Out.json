@@ -31,7 +31,10 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.5
+        "rocketFreq": 0.5,
+
+        "predictRocketsEvery": 4,
+        "predictRocketsLead": 0.6
       },
       {
         "lat": 37.83615699386319,
@@ -39,7 +42,10 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.5
+        "rocketFreq": 0.5,
+
+        "predictRocketsEvery": 4,
+        "predictRocketsLead": 0.6
       },
       {
         "lat": 37.857034036471994,
@@ -47,7 +53,10 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.5
+        "rocketFreq": 0.5,
+
+        "predictRocketsEvery": 4,
+        "predictRocketsLead": 0.6
       },
       {
         "lat": 37.79996678994023,
@@ -55,7 +64,10 @@
         "size": "big",
 
         "rocketSpeed": 8000,
-        "rocketFreq": 0.5
+        "rocketFreq": 0.5,
+
+        "predictRocketsEvery": 4,
+        "predictRocketsLead": 0.6
       }
     ]
 }

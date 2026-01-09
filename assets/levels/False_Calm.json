@@ -58,7 +58,7 @@
         "rocketSpeed": 10000,
         "rocketFreq": 2,
         "smartRocketsEvery": 3,
-        "smartRocketSpeedFactor": 0.44
+        "smartRocketSpeedFactor": 0.5
       },
       { 
         "lat": 23.57863696199861,
@@ -66,7 +66,9 @@
         "size": "medium",
 
         "rocketSpeed": 7000,
-        "rocketFreq": 0.5
+        "rocketFreq": 0.5,
+        "predictRocketsEvery": 4,
+        "predictRocketsLead": 0.9
       },
       { 
         "lat": 23.566,

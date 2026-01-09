@@ -65,7 +65,10 @@
         "size": "medium",
 
         "rocketSpeed": 7000,
-        "rocketFreq": 2
+        "rocketFreq": 2,
+
+        "predictRocketsEvery": 3,
+        "predictRocketsLead": 0.6
       }
     ]
 }
