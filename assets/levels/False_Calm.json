@@ -6,63 +6,63 @@
     },
     "start": {
       "lat": 23.715,
-      "lng": -76.287572180827,
+      "lng": -76.2875,
       "heading": 90
     },
     "targetLocations": [
       {
-        "lat": 23.774293185719927,
-        "lng": -76.1066050094029,
+        "lat": 23.7742,
+        "lng": -76.1066,
         "emoji": "🛢️",
         "size": "small" 
       },
       {
-        "lat": 23.747658153433383,
-        "lng": -76.06640441511443,
+        "lat": 23.7476,
+        "lng": -76.0664,
         "emoji": "🛢️",
         "size": "small" 
       },
       {
-        "lat": 23.697283775880678,
-        "lng": -76.04212286912312,
+        "lat": 23.6972,
+        "lng": -76.0421,
         "emoji": "🛢️",
         "size": "small" 
       },
       {  
-        "lat": 23.672307956567675,
-        "lng": -75.97307361148188,
+        "lat": 23.6723,
+        "lng": -75.9730,
         "emoji": "🚢",
         "size": "medium" 
       },
       {        
-        "lat": 23.580188221951538,
-        "lng": -75.86608556809812,
+        "lat": 23.5801,
+        "lng": -75.8660,
         "emoji": "🚢",
         "size": "big" 
       }
     ],
     "radarLocations": [
       { 
-        "lat": 23.69462166631644,
-        "lng": -76.04562475319928,
+        "lat": 23.6946,
+        "lng": -76.0456,
         "size": "small",
 
         "rocketSpeed": 9000,
         "rocketFreq": 2
       },
       { 
-        "lat": 23.6786606435839,
-        "lng": -75.95683471049304,
+        "lat": 23.6786,
+        "lng": -75.9568,
         "size": "medium",
 
         "rocketSpeed": 10000,
         "rocketFreq": 2,
         "smartRocketsEvery": 3,
-        "smartRocketSpeedFactor": 0.5
+        "smartRocketSpeedFactor": 0.44
       },
       { 
-        "lat": 23.57863696199861,
-        "lng": -75.87554433894357,
+        "lat": 23.5786,
+        "lng": -75.8755,
         "size": "medium",
 
         "rocketSpeed": 7000,
