@@ -16,7 +16,8 @@ const sounds = {
 };
 
 const V = {
-  ui: 0.55,
+  ui: 0.85,
+  ui_clicked: 0.65,
   fx: 0.65,
   impact: 0.75,
   state: 0.5,
@@ -24,7 +25,7 @@ const V = {
 };
 
 sounds.key_arrow.volume = V.ui;
-sounds.clicked.volume   = V.ui;
+sounds.clicked.volume   = V.ui_clicked;
 
 sounds.missile_lock.volume  = V.fx;
 sounds.release_bomb.volume  = V.fx;
