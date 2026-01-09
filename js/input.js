@@ -125,6 +125,10 @@ window.addEventListener("keydown", e => {
 });
 
 
+window.addEventListener("blur", () => {  // must to prevent endless movement
+  state.keys = {};
+});
+
 
 window.addEventListener("keyup", e => {
   const code = normCode(e);
