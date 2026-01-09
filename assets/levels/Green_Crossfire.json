@@ -5,25 +5,25 @@
       "maxStealth": 2
     },
     "start": {
-      "lat": -3.4711,
-      "lng": -69.0391,
+      "lat": -3.369,
+      "lng": -69.39,
       "heading": 90
     },
     "targetLocations": [
       {
         "lat": -3.399,
-        "lng": -69.24690363552821,
+        "lng": -69.2469,
         "emoji": "🏗️",
         "size": "medium" 
       },
       {
-        "lat": -3.5012196901344734,
-        "lng": -69.06609490964573,
+        "lat": -3.5012,
+        "lng": -69.0660,
         "emoji": "🏗️",
         "size": "medium" 
       },
       {
-        "lat": -3.47119,
+        "lat": -3.4711,
         "lng": -69.0391,
         "emoji": "🏗️",
         "size": "medium" 
@@ -31,23 +31,23 @@
     ],
     "radarLocations": [
       {
-        "lat": -3.4387918625149605,
-        "lng": -69.17220520085857,
+        "lat": -3.4387,
+        "lng": -69.1722,
         "size": "small",
 
         "rocketSpeed": 8000,
         "rocketFreq": 0.8
       },
       {
-        "lat": -3.447340110941137,
-        "lng": -69.21796930448764,
+        "lat": -3.4473,
+        "lng": -69.2179,
         "size": "small",
 
         "rocketSpeed": 8000,
         "rocketFreq": 0.8
       },
       {
-        "lat": -3.497604177734923,
+        "lat": -3.4976,
         "lng": -69.06,
         "size": "medium",
 
@@ -57,8 +57,8 @@
         "predictRocketsLead": 0.65
       },
       { 
-        "lat": -3.4900023994586173,
-        "lng": -69.0545517840234,
+        "lat": -3.4900,
+        "lng": -69.0545,
         "size": "big",
 
         "rocketSpeed": 10000,
