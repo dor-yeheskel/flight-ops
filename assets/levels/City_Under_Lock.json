@@ -1,25 +1,20 @@
 {
     "displayName": "City Under Lock",
     "limits": {
-      "maxBombs": 1,
+      "maxBombs": 10,
       "maxStealth": 1
     },
     "start": {
-      "lat": 100,
-      "lng": 100,
-      "heading": 27
+      "lat": 47.233433,
+      "lng": 11.008359,
+      "heading": 67
     },
     "night": true,
-    "base": {
-      "lat": 37.6220,
-      "lng": -122.3830,
-      "rotation": 26
-    },
     "targetCount": 2,
     "targetLocations": [
       {
-        "lat": 37.8280,
-        "lng": -122.4228,
+        "lat": 47.266768283678125,
+        "lng": 11.39701355801686,
         "emoji": "🏢",
         "size": "big" 
       }
