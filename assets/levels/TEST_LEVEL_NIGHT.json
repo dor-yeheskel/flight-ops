@@ -1,5 +1,9 @@
 {
     "displayName": "(Test Night)",
+    "limits": {
+      "maxBombs": 10,
+      "maxStealth": 2
+    },
     "start": {
       "lat": 31.5195,
       "lng": 34.3888,
@@ -45,9 +49,5 @@
         "rocketSpeed": 10000,
         "rocketFreq": 0.9
       }
-    ],
-    "limits": {
-      "maxBombs": 10,
-      "maxStealth": 2
-    }
+    ]
 }
