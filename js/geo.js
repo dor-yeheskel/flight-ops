@@ -39,6 +39,6 @@ function bearing(lat1, lon1, lat2, lon2) {
 function radarSizeToType(size) {
   if (size === "small") return RADAR_TYPES[0];
   if (size === "medium") return RADAR_TYPES[1];
-  if (size === "big" || size === "large") return RADAR_TYPES[2];
+  if (size === "big") return RADAR_TYPES[2];
   return RADAR_TYPES[1];
 }
