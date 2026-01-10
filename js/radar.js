@@ -99,7 +99,11 @@ function drawRadar() {
   }
 
   // ===== BASE ARROW WHEN NO BOMBS (OUT OF RANGE) =====
-  if (state.hasBase && state.bombs <= 0) {
+  if (
+    state.hasBase &&
+    state.bombs <= 0 &&
+    entities.bombs.length === 0
+  ) {
     const d = distance(state, state.base);
     if (d > CONFIG_DEFAULTS.radarRangeOnMinimap) {
       const angle = Math.atan2(
