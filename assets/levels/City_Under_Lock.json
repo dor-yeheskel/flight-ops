@@ -1,7 +1,7 @@
 {
     "displayName": "City Under Lock",
     "limits": {
-      "maxBombs": 10,
+      "maxBombs": 12,
       "maxStealth": 1
     },
     "start": {
@@ -13,20 +13,124 @@
     "targetCount": 2,
     "targetLocations": [
       {
-        "lat": 47.266768283678125,
-        "lng": 11.39701355801686,
+        "lat": 47.2769,
+        "lng": 11.4765,
+        "emoji": "🏭",
+        "size": "medium" 
+      },
+      {
+        "lat": 47.2771,
+        "lng": 11.4341,
+        "emoji": "🏭",
+        "size": "medium" 
+      },
+      {
+        "lat": 47.2639,
+        "lng": 11.3968,
         "emoji": "🏢",
-        "size": "big" 
+        "size": "medium"
       }
     ],
     "radarLocations": [
       {
-        "lat": 37.7999,
-        "lng": -122.4584,
-        "size": "big",
+        "lat": 47.2626,
+        "lng": 11.3171,
+        "size": "medium",
 
-        "rocketSpeed": 8000,
-        "rocketFreq": 0.6
+        "rocketSpeed": 11000,
+        "rocketFreq": 0.6,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": 47.2557,
+        "lng": 11.3399,
+        "size": "medium",
+
+        "rocketSpeed": 11000,
+        "rocketFreq": 0.6,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": 47.2362,
+        "lng": 11.4101,
+        "size": "medium",
+
+        "rocketSpeed": 11000,
+        "rocketFreq": 0.6,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": 47.2495,
+        "lng": 11.3918,
+        "size": "medium",
+
+        "rocketSpeed": 11000,
+        "rocketFreq": 0.6,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": 47.2507,
+        "lng": 11.4355,
+        "size": "medium",
+
+        "rocketSpeed": 11000,
+        "rocketFreq": 0.6,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": 47.2641,
+        "lng": 11.4918,
+        "size": "medium",
+
+        "rocketSpeed": 11000,
+        "rocketFreq": 0.6,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": 47.2856,
+        "lng": 11.5369,
+        "size": "medium",
+
+        "rocketSpeed": 11000,
+        "rocketFreq": 0.6,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": 47.2926,
+        "lng": 11.3792,
+        "size": "small",
+
+        "rocketSpeed": 11000,
+        "rocketFreq": 0.6,
+        "predictRocketsEvery": 2,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": 47.2952,
+        "lng": 11.4221,
+        "size": "small",
+
+        "rocketSpeed": 11000,
+        "rocketFreq": 0.6,
+        "predictRocketsEvery": 2,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": 47.3025,
+        "lng": 11.4616,
+        "size": "small",
+
+        "rocketSpeed": 11000,
+        "rocketFreq": 0.6,
+        "predictRocketsEvery": 2,
+        "predictRocketsLead": 0.6
       }
     ]
 }
