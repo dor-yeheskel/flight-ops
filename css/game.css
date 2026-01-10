@@ -665,7 +665,7 @@ body.night .fire-emoji {
 
 #threatIndicator {
   position: absolute;
-  left: 34px;
+  left: 15px;
   top: 185px;
   font-size: 22px;
   opacity: 0;
@@ -725,4 +725,26 @@ body.night .fire-emoji {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+#returnToBaseIndicator {
+  position: absolute;
+  left: 48px;
+  top: 189px;
+  font-size: 20px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  filter: drop-shadow(0 0 6px rgba(120,200,255,0.6));
+}
+
+#returnToBaseIndicator.active {
+  animation: fuelBlink 1.2s infinite;
+  opacity: 1;
+}
+
+@keyframes fuelBlink {
+  0%   { opacity: 0.15; transform: scale(1); }
+  50%  { opacity: 1;    transform: scale(1.15); }
+  100% { opacity: 0.15; transform: scale(1); }
 }

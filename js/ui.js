@@ -85,6 +85,18 @@ function updateHUD() {
   setHUDValue("hud-bombs", state.bombs);
   setHUDValue("hud-stealth", state.stealthUses);
   setHUDValue("hud-targets", entities.remainingTargets);
+
+  const rtbEl = document.getElementById("returnToBaseIndicator");
+  if (rtbEl) {
+    const needReturnToBase =
+      state.hasBase &&
+      state.bombs === 0 &&
+      entities.bombs.length === 0 &&
+      !state.gameOver &&
+      state.gameStarted;
+
+    rtbEl.classList.toggle("active", needReturnToBase);
+  }
 }
 
 function setHUDValue(id, value) {
