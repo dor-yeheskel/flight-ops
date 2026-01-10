@@ -1,4 +1,20 @@
+TODO:
+  * Level Iceland:
+    * Radar with "1" predict, every 3 rockets. High Rate and speed.
+    * Radar that follows.
+  * Production: Try the GitHub pages or something similar - and after Edo feedback - see what to improve.
+
+--------------------------------------------------------------------------
+After external player (Edo):
+--------------------------------------------------------------------------
 Next:
-  * Missions: https://docs.google.com/document/d/1XEAaBC2EewAXH4tuR27LtHHdHiNKEPWIYdB_nU2scDM/edit?tab=t.0
-      * Small radar - will have only smart rockets.
-  * Production: Try the GitHub pages (pinned chat) and after Edo feedback -> itch.
+  * Repo of the levels - separate from the game - will be loaded.
+  * Way to load any additional levels from directory that include index.json.
+
+README:
+  “2D air combat over real-world maps — fly missions above actual cities.”
+  “Fight radar systems and missile defenses over real satellite terrain.”
+  GIF of 5-7 seconds: Airplane enter - radar lock missile - airplane bomb factory.
+
+  Goal of 1000.
+  Points example.
