@@ -2,12 +2,7 @@
 
 function getBombImpactPoint() {
   const t = state.speed / CONFIG_DEFAULTS.accel;
-  let dist = 0.5 * (state.speed / 3.6) * t;
-
-  // WebMercator compensation: at high latitudes 1 meter = more pixels.
-  // This keeps the on-screen lead roughly consistent across latitudes.
-  const latScale = Math.cos(rad(state.lat));
-  dist *= Math.max(0.2, latScale); // clamp to avoid extreme shrink near poles
+  const dist = 0.5 * (state.speed / 3.6) * t;
 
   return move(state.lat, state.lng, state.heading, dist);
 }
