@@ -29,10 +29,10 @@
         "lng": -122.3760,
         "size": "big",
 
-        "rocketSpeed": 8000,
+        "rocketSpeed": 9000,
         "rocketFreq": 0.5,
 
-        "predictRocketsEvery": 4,
+        "predictRocketsEvery": 3,
         "predictRocketsLead": 0.6
       },
       {
@@ -40,10 +40,10 @@
         "lng": -122.4781,
         "size": "big",
 
-        "rocketSpeed": 8000,
+        "rocketSpeed": 9000,
         "rocketFreq": 0.5,
 
-        "predictRocketsEvery": 4,
+        "predictRocketsEvery": 3,
         "predictRocketsLead": 0.6
       },
       {
@@ -51,10 +51,10 @@
         "lng": -122.4390,
         "size": "big",
 
-        "rocketSpeed": 8000,
+        "rocketSpeed": 9000,
         "rocketFreq": 0.5,
 
-        "predictRocketsEvery": 4,
+        "predictRocketsEvery": 3,
         "predictRocketsLead": 0.6
       },
       {
@@ -62,10 +62,10 @@
         "lng": -122.4584,
         "size": "big",
 
-        "rocketSpeed": 8000,
+        "rocketSpeed": 9000,
         "rocketFreq": 0.5,
 
-        "predictRocketsEvery": 4,
+        "predictRocketsEvery": 3,
         "predictRocketsLead": 0.6
       }
     ]

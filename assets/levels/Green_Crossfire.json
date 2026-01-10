@@ -31,6 +31,46 @@
     ],
     "radarLocations": [
       {
+        "lat": -3.4544,
+        "lng": -69.3178,
+        "size": "small",
+
+        "rocketSpeed": 8000,
+        "rocketFreq": 0.7,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": -3.4530,
+        "lng": -69.3011,
+        "size": "small",
+
+        "rocketSpeed": 8000,
+        "rocketFreq": 0.7,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": -3.4546,
+        "lng": -69.2800,
+        "size": "small",
+
+        "rocketSpeed": 8000,
+        "rocketFreq": 0.7,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
+        "lat": -3.4532,
+        "lng": -69.2572,
+        "size": "small",
+
+        "rocketSpeed": 8000,
+        "rocketFreq": 0.7,
+        "predictRocketsEvery": 1,
+        "predictRocketsLead": 0.6
+      },
+      {
         "lat": -3.4494,
         "lng": -69.2360,
         "size": "small",
