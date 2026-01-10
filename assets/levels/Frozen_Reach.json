@@ -1,15 +1,21 @@
 {
     "displayName": "Frozen Reach",
     "limits": {
-      "maxBombs": 1,
+      "maxBombs": 10,
       "maxStealth": 0
     },
     "start": {
-      "lat": 0,
-      "lng": 0,
-      "heading": 0
+      "lat": 63.7227,
+      "lng": -17.5580,
+      "heading": 30
     },
     "targetLocations": [
+      {
+        "lat": 63.7836,
+        "lng": -17.093977,
+        "emoji": "🛢️",
+        "size": "" 
+      },
       {
         "lat": 0,
         "lng": 0,

@@ -1,7 +1,7 @@
 /* ========= GAME LOOP (logic preserved) ========= */
 // ===== DEBUG =====
 const DEBUG_COORDS = false;
-const DEBUG_COORDS_INTERVAL = 0.5; // seconds
+const DEBUG_COORDS_INTERVAL = 0.1; // seconds
 let _debugCoordsTimer = 0;
 // =================
 
