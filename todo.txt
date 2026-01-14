@@ -1,7 +1,4 @@
 TODO:
-  * Level Iceland:
-    * Radar with "1" predict, every 3 rockets. High Rate and speed.
-    * Radar that follows.
   * Production: Try the GitHub pages or something similar - and after Edo feedback - see what to improve.
 
 --------------------------------------------------------------------------
@@ -10,6 +7,10 @@ After external player (Edo):
 Next:
   * Repo of the levels - separate from the game - will be loaded.
   * Way to load any additional levels from directory that include index.json.
+
+Minor fixes (nice to have):
+  * High lng line: Speed, Radar detect, and bomb loc in red dot.
+  * Night issue - big wide? mountains vs SFO?
 
 README:
   “2D air combat over real-world maps — fly missions above actual cities.”
