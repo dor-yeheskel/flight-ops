@@ -108,22 +108,40 @@ function loop(t) {
       if (state.stealthTimer <= 0) state.stealthActive = false;
     }
 
-    // bombs movement
-    for (let i = entities.bombs.length - 1; i >= 0; i--) {
-      const b = entities.bombs[i];
-      b.speed -= CONFIG_DEFAULTS.accel * dt;
+// bombs movement
+for (let i = entities.bombs.length - 1; i >= 0; i--) {
+  const b = entities.bombs[i];
 
-      if (b.speed <= 0) {
-        explodeBomb(b);
-        entities.bombs.splice(i, 1);
-        continue;
-      }
+  const v0 = b.speed; // km/h
+  const v1 = v0 - CONFIG_DEFAULTS.accel * dt; // km/h
 
-      const p = move(b.lat, b.lng, b.heading, (b.speed / 3.6) * dt);
-      b.lat = p.lat;
-      b.lng = p.lng;
-      b.marker.setLatLng(p);
-    }
+  // if bomb "stops" during this frame, move it exactly until impact and explode
+  if (v1 <= 0) {
+    const timeToZero = v0 / CONFIG_DEFAULTS.accel; // seconds
+    const dist = 0.5 * (v0 / 3.6) * timeToZero;   // meters
+
+    const pImpact = move(b.lat, b.lng, b.heading, dist);
+    b.lat = pImpact.lat;
+    b.lng = pImpact.lng;
+    b.marker.setLatLng(pImpact);
+
+    explodeBomb(b);
+    entities.bombs.splice(i, 1);
+    continue;
+  }
+
+  // otherwise move by average speed over dt (more accurate than Euler)
+  const vAvg = 0.5 * (v0 + v1); // km/h
+  const dist = (vAvg / 3.6) * dt; // meters
+
+  const p = move(b.lat, b.lng, b.heading, dist);
+  b.lat = p.lat;
+  b.lng = p.lng;
+  b.marker.setLatLng(p);
+
+  b.speed = v1;
+}
+
 
     // radars firing
     let underThreat = false;

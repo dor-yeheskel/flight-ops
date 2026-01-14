@@ -1,10 +1,14 @@
 /* ========= BOMBS ========= */
 
-function getBombImpactPoint() {
-  const t = state.speed / CONFIG_DEFAULTS.accel;
-  const dist = 0.5 * (state.speed / 3.6) * t;
+function getBombImpactPointFrom(lat, lng, heading, speed) {
+  const t = speed / CONFIG_DEFAULTS.accel;              // seconds
+  const dist = 0.5 * (speed / 3.6) * t;                // meters
+  return move(lat, lng, heading, dist);
+}
 
-  return move(state.lat, state.lng, state.heading, dist);
+
+function getBombImpactPoint() {
+return getBombImpactPointFrom(state.lat, state.lng, state.heading, state.speed);
 }
 
 
@@ -23,6 +27,8 @@ function dropBomb() {
     lng: state.lng,
     heading: state.heading,
     speed: state.speed,
+    predicted: getBombImpactPointFrom(state.lat, state.lng, state.heading, state.speed),
+ 
     marker: L.marker([state.lat, state.lng], {
       icon: L.divIcon({ html: "💣", className: "bomb" })
     }).addTo(layerBombs)
