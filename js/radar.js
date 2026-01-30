@@ -301,6 +301,18 @@ function drawNight() {
     ctx.fill();
   }
   ctx.globalCompositeOperation = "source-over";
+
+  // === AIM DOT (ALWAYS VISIBLE) ===
+  const impact = getBombImpactPoint();
+  const pAim = map.latLngToContainerPoint([impact.lat, impact.lng]);
+
+  ctx.globalCompositeOperation = "source-over";
+  ctx.fillStyle = "red";
+  ctx.beginPath();
+  ctx.arc(pAim.x, pAim.y, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+
 }
 
 function setThreat(active) {
