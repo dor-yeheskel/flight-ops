@@ -1,6 +1,3 @@
-TODO:
-  * Production: Try the GitHub pages or something similar - and after Edo feedback - see what to improve.
-
 --------------------------------------------------------------------------
 After external player (Edo):
 --------------------------------------------------------------------------

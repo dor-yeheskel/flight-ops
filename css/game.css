@@ -748,3 +748,56 @@ body.night .fire-emoji {
   50%  { opacity: 1;    transform: scale(1.15); }
   100% { opacity: 0.15; transform: scale(1); }
 }
+
+#mobileBlocker {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    #121824,
+    #0b0f14
+  );
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  color: white;
+  font-family: system-ui;
+  text-align: center;
+}
+
+#mobileBlocker.active {
+  display: flex;
+}
+
+.mobile-panel {
+  max-width: 360px;
+  padding: 28px 24px;
+  border-radius: 16px;
+  background: rgba(0,0,0,0.45);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.mobile-icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.mobile-panel h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+
+.mobile-panel p {
+  margin: 8px 0;
+  font-size: 15px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.mobile-hint {
+  margin-top: 14px;
+  font-size: 13px;
+  opacity: 0.6;
+}

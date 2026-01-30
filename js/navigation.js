@@ -32,6 +32,15 @@ function nextLevel() {
 /* ========= BOOT ========= */
 
 window.addEventListener('DOMContentLoaded', async function() {
+  const isMobile = window.matchMedia(
+    "(hover: none) and (pointer: coarse)"
+  ).matches;
+
+  if (isMobile) {
+    document.getElementById("mobileBlocker")?.classList.add("active");
+    return;
+  }
+
   await loadLevels();
   levelToData = window.LEVELS;
   levelOrder = Object.keys(window.LEVELS);
