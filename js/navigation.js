@@ -17,6 +17,7 @@ function startGame() {
 }
 
 function restartLevel() {
+  stopAllSounds();
   document.activeElement.blur();
   loadLevel(state.levelId);
   startGame();

@@ -224,6 +224,7 @@ function victoryHandler() {
     btn.textContent = "▶ NEXT LEVEL";
     btn.onclick = () => {
       loadLevel(nextLevel);
+      stopAllSounds();
       startGame();
     };
     hintPrimary.textContent = "Press Enter to continue";
