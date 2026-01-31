@@ -9,11 +9,7 @@ html, body {
   font-family: "JetBrains Mono", system-ui, monospace;
 
 }
-#map {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
+#map { height:100%; }
 
 
 * {

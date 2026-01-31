@@ -1,11 +1,6 @@
 /* ========= MAP ========= */
 
 const map = L.map("map", { zoomControl: false, inertia: false });
-setTimeout(() => {
-  map.invalidateSize();
-}, 200);
-
-
 map.keyboard.disable();
 map.dragging.disable();
 
@@ -15,10 +10,9 @@ function resizeNightCanvas() {
   nightCanvas.width = window.innerWidth;
   nightCanvas.height = window.innerHeight;
 }
-window.addEventListener("resize", () => {
-  map.invalidateSize();
-  resizeNightCanvas();
-});
+window.addEventListener("resize", resizeNightCanvas);
+resizeNightCanvas();
+
 
 L.tileLayer(
   "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
