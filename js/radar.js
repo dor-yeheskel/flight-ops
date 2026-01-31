@@ -218,7 +218,7 @@ function drawNight() {
 
   ctx.clearRect(0, 0, nightCanvas.width, nightCanvas.height);
 
-  ctx.fillStyle = "rgba(0,0,0,0.89)";
+  ctx.fillStyle = "rgba(0,0,0,0.725)";
   ctx.fillRect(0, 0, nightCanvas.width, nightCanvas.height);
 
   const p = map.latLngToContainerPoint([state.lat, state.lng]);
