@@ -12,6 +12,7 @@ function normCode(e) {
 }
 
 window.addEventListener("keydown", e => {
+  if (e.repeat) return;
   const code = normCode(e);
   const isEnter = (code === "Enter" || code === "NumpadEnter");
   if (e.code === "KeyP") {
