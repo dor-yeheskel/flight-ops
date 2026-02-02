@@ -2,7 +2,7 @@
     "displayName": "Last Night",
     "limits": {
       "maxBombs": 1,
-      "maxStealth": 1
+      "maxStealth": 0
     },
     "start": {
       "lat": 37.612945,
@@ -21,7 +21,7 @@
         "lat": 37.8280,
         "lng": -122.4228,
         "emoji": "☢️",
-        "size": "big" 
+        "size": "medium" 
       }
     ],
     "radarLocations": [
