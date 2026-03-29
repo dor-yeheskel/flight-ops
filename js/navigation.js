@@ -42,6 +42,13 @@ window.addEventListener('DOMContentLoaded', async function() {
   }
 
   await loadLevels();
+
+  // Hide loader, reveal content
+  const introLoader = document.getElementById("introLoader");
+  const introContent = document.getElementById("introContent");
+  if (introLoader) introLoader.style.display = "none";
+  if (introContent) introContent.style.display = "";
+
   levelToData = window.LEVELS;
   levelOrder = Object.keys(window.LEVELS);
 
