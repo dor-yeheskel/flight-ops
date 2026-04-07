@@ -51,6 +51,8 @@ function renderProgressTable() {
       state.levelIndex = levelOrder.indexOf(levelId);
 
       playSound("clicked");
+      loadLevel(levelId);
+      startGame();
     });
   });
 
