@@ -36,6 +36,10 @@ function goToMenu() {
   endScreenEl.style.display = "none";
   introEl.style.display = "flex";
 
+  // Hide menu button on menu
+  const menuBtnEl = document.getElementById("menuBtn");
+  if (menuBtnEl) menuBtnEl.style.display = "none";
+
   // highlight selected level in progress table
   const rows = document.querySelectorAll(".progressRow:not(.header)");
   rows.forEach((row, i) => {

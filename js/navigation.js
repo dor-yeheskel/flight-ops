@@ -5,6 +5,10 @@ function startGame() {
   introEl.style.display = "none";
   endScreenEl.style.display = "none";
 
+  // Show menu button during gameplay
+  const menuBtn = document.getElementById("menuBtn");
+  if (menuBtn) menuBtn.style.display = "";
+
   whiteFlash();
   
   setTimeout(() => {
@@ -78,6 +82,17 @@ window.addEventListener('DOMContentLoaded', async function() {
     toggleMute();
     muteBtn.blur();
   });
+
+  // Menu (back) button
+  const menuBtnEl = document.getElementById("menuBtn");
+  if (menuBtnEl) {
+    menuBtnEl.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      goToMenu();
+      menuBtnEl.blur();
+    });
+  }
 
   
   // Create plane marker now that map exists
