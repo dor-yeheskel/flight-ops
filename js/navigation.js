@@ -5,6 +5,10 @@ function startGame() {
   introEl.style.display = "none";
   endScreenEl.style.display = "none";
 
+  // Hide theme button during gameplay
+  const themeBtn = document.getElementById("themeBtn");
+  if (themeBtn) themeBtn.style.display = "none";
+
   // Show menu button during gameplay
   const menuBtn = document.getElementById("menuBtn");
   if (menuBtn) menuBtn.style.display = "";
@@ -82,6 +86,18 @@ window.addEventListener('DOMContentLoaded', async function() {
     toggleMute();
     muteBtn.blur();
   });
+
+  // Theme toggle
+  const themeBtn = document.getElementById("themeBtn");
+  initTheme();
+  if (themeBtn) {
+    themeBtn.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleTheme();
+      themeBtn.blur();
+    });
+  }
 
   // Menu (back) button
   const menuBtnEl = document.getElementById("menuBtn");

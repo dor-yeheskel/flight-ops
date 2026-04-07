@@ -36,6 +36,10 @@ function goToMenu() {
   endScreenEl.style.display = "none";
   introEl.style.display = "flex";
 
+  // Show theme button on menu
+  const themeBtnEl = document.getElementById("themeBtn");
+  if (themeBtnEl) themeBtnEl.style.display = "";
+
   // Hide menu button on menu
   const menuBtnEl = document.getElementById("menuBtn");
   if (menuBtnEl) menuBtnEl.style.display = "none";

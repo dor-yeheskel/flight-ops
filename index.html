@@ -24,6 +24,14 @@
 <!-- CSS -->
 <link rel="stylesheet" href="css/game.css">
 
+<!-- Theme: apply before first paint to avoid flash -->
+<script>
+  (function(){
+    var t = localStorage.getItem("flight_game_theme");
+    if (t !== "light") document.documentElement.classList.add("theme-dark");
+  })();
+</script>
+
 <!-- Map -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
@@ -58,6 +66,7 @@
 <div id="threatIndicator">⚠️</div>
 <div id="returnToBaseIndicator">🛬</div>
 <button id="menuBtn" class="menu-btn" style="display:none">🏠</button>
+<button id="themeBtn" class="theme-btn" style="display:none">🌙</button>
 <button id="muteBtn" class="mute-btn">🔊</button>
 
 <div id="radar">
