@@ -33,7 +33,7 @@ function nextLevel() {
 
 window.addEventListener('DOMContentLoaded', async function() {
   const isMobile = window.matchMedia(
-    "(hover: none) and (pointer: coarse)"
+    "(hover: none) and (pointer: coarse) and (any-pointer: coarse)"
   ).matches;
 
   if (isMobile) {
