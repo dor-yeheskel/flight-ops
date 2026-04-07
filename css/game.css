@@ -169,6 +169,9 @@ html, body {
   opacity: 0.6;
   z-index: 100001;
 }
+#muteBtn:hover {
+  opacity: 1;
+}
 
 
 .hud-level {
