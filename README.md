@@ -1,8 +1,8 @@
-# Flight Ops — a 2D air combat game on real-world maps
+# Flight Ops - a 2D air combat game on real-world maps
 
-### Link: https://dor-yeheskel.itch.io/flight-ops
+### [Link](https://dor-yeheskel.itch.io/flight-ops)
 
-### Gameplay Demo: https://www.youtube.com/watch?v=mLi7nS4pmlM
+### [Gameplay Demo](https://www.youtube.com/watch?v=mLi7nS4pmlM)
 
 ## 🧭 Overview
 
