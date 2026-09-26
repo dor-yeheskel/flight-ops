@@ -2,7 +2,7 @@
 
 ### Link: https://dor-yeheskel.itch.io/flight-ops
 
-### Demo: https://www.youtube.com/watch?v=mLi7nS4pmlM
+### Gameplay Demo: https://www.youtube.com/watch?v=mLi7nS4pmlM
 
 ## 🧭 Overview
 
