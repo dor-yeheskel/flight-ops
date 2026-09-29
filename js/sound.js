@@ -22,8 +22,8 @@ const V = {
   jetSpeed: 0.25,
   ui: 0.95,
   ui_clicked: 0.55,
-  fx: 0.65,
-  impact: 0.75,
+  fx: 0.55,
+  impact: 0.55,
   state: 0.5,
   end: 0.85,
 };
