@@ -10,6 +10,7 @@ let last = performance.now();
 
 function loop(t) {
   updateJetSound();
+  updateSpeedSound();
   if (state.paused) {
     requestAnimationFrame(loop);
     return;
@@ -62,6 +63,7 @@ function loop(t) {
     if (state.keys["ArrowDown"])  state.speed -= CONFIG_DEFAULTS.accel * dt;
 
     state.speed = Math.max(CONFIG_DEFAULTS.minSpeed, Math.min(CONFIG_DEFAULTS.maxSpeed, state.speed));
+    updateSpeedSound();
 
     const pos = move(state.lat, state.lng, state.heading, (state.speed / 3.6) * dt);
     state.lat = pos.lat;

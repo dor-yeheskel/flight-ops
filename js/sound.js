@@ -1,6 +1,8 @@
 /* ========= SOUND ========= */
 
 const sounds = {
+  jet_acceleration: new Audio("assets/sounds/jet_acceleration.wav"),
+  jet_deceleration: new Audio("assets/sounds/jet_deceleration.wav"),
   missile_lock: new Audio("assets/sounds/missile_lock.wav"),
   release_bomb: new Audio("assets/sounds/release_bomb.wav"),
   explode: new Audio("assets/sounds/explode.wav"),
@@ -17,6 +19,7 @@ const sounds = {
 
 const V = {
   jet: 0.3,
+  jetSpeed: 0.25,
   ui: 0.95,
   ui_clicked: 0.55,
   fx: 0.65,
@@ -24,6 +27,11 @@ const V = {
   state: 0.5,
   end: 0.85,
 };
+
+sounds.jet_acceleration.volume = V.jetSpeed;
+sounds.jet_acceleration.loop = true;
+sounds.jet_deceleration.volume = V.jetSpeed;
+sounds.jet_deceleration.loop = true;
 
 sounds.key_arrow.volume = V.ui;
 sounds.clicked.volume   = V.ui_clicked;
@@ -121,6 +129,27 @@ function updateJetSound() {
   jetSource.start(0, jetOffset);
 }
 
+function updateSpeedSound() {
+  const active = soundEnabled && state.gameStarted && !state.gameOver &&
+    !state.paused && currentState === GAME_STATE.PLAYING;
+  const direction = active && state.keys["ArrowUp"] && !state.keys["ArrowDown"] &&
+    state.speed < CONFIG_DEFAULTS.maxSpeed ? "jet_acceleration" :
+    active && state.keys["ArrowDown"] && !state.keys["ArrowUp"] &&
+    state.speed > CONFIG_DEFAULTS.minSpeed ? "jet_deceleration" : null;
+
+  for (const name of ["jet_acceleration", "jet_deceleration"]) {
+    const sound = sounds[name];
+    if (name === direction) {
+      if (sound.paused) sound.play().catch(() => {});
+    } else {
+      sound.pause();
+      sound.currentTime = 0;
+      sound._wasMutedWhilePlaying = false;
+      sound._wasPausedByGame = false;
+    }
+  }
+}
+
 let muteBtn = null;
 
 function updateMuteUI() {
@@ -133,6 +162,7 @@ function toggleMute() {
   localStorage.setItem(SOUND_KEY, soundEnabled ? "on" : "off");
   if (!soundEnabled) {
     stopJetSound(false);
+    updateSpeedSound();
     for (const s of Object.values(sounds)) {
       if (!s.paused && !s.ended) {
         s._wasMutedWhilePlaying = true;
@@ -146,6 +176,7 @@ function toggleMute() {
         s.play().catch(() => {});
       }
     }
+    updateSpeedSound();
   }
   updateMuteUI();
 }
@@ -162,6 +193,7 @@ function togglePause() {
 
   if (state.paused) {
     stopJetSound(false);
+    updateSpeedSound();
     // Pause all currently playing audio
     for (const s of Object.values(sounds)) {
       if (!s.paused && !s.ended) {
@@ -177,11 +209,18 @@ function togglePause() {
         s.play().catch(() => {});
       }
     }
+    updateSpeedSound();
   }
 }
 
 function stopAllSounds({ fade = false, duration = 1200 } = {}) {
   stopJetSound();
+  for (const sound of [sounds.jet_acceleration, sounds.jet_deceleration]) {
+    sound.pause();
+    sound.currentTime = 0;
+    sound._wasMutedWhilePlaying = false;
+    sound._wasPausedByGame = false;
+  }
   const now = performance.now();
 
   for (const s of Object.values(sounds)) {

@@ -123,22 +123,26 @@ window.addEventListener("keydown", e => {
   }
 
   state.keys[code] = true;
+  if (code === "ArrowUp" || code === "ArrowDown") updateSpeedSound();
 });
 
 
 window.addEventListener("blur", () => {  // must to prevent endless movement
   state.keys = {};
+  updateSpeedSound();
 });
 
 
 window.addEventListener("keyup", e => {
   const code = normCode(e);
   state.keys[code] = false;
+  if (code === "ArrowUp" || code === "ArrowDown") updateSpeedSound();
 });
 
 window.addEventListener("visibilitychange", () => {
   if (!document.hidden) {
     state.keys = {};
+    updateSpeedSound();
     window.focus();
   }
 });
